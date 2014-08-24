@@ -39,7 +39,7 @@ angular.module('chartApp', ['oxford'])
   };
 });
 ```
-+If you want to change the type of chart to display add a type property to your data object like this...
+If you want to change the type of chart to display add a type property to your data object like this...
 
 ```javascript
 angular.module('chartApp', ['oxford'])

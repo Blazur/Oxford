@@ -18,3 +18,6 @@ Oxford
 ```javascript
 angular.module('myApp', ['oxford'])
 ```
+
+##Using
+###Charts

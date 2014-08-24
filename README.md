@@ -23,7 +23,7 @@ angular.module('myApp', ['oxford'])
 ###Chart Directive
 
 ```html
-<div>ng-controller="ChartController">
+<divng-controller="ChartController">
   <chart data="data"></chart>
 </div>
 ```

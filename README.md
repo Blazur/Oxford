@@ -31,12 +31,12 @@ angular.module('myApp', ['oxford'])
 ```javascript
 angular.module('chartApp', ['oxford'])
 .controller('ChartController', function($scope){
-    $scope.data = {
-      columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 50, 20, 10, 40, 15, 25]
-      ]
-    };
+  $scope.data = {
+    columns: [
+      ['data1', 30, 200, 100, 400, 150, 250],
+      ['data2', 50, 20, 10, 40, 15, 25]
+    ]
+  };
 });
 ```
 +If you want to change the type of chart to display add a type property to your data object like this...
@@ -44,13 +44,13 @@ angular.module('chartApp', ['oxford'])
 ```javascript
 angular.module('chartApp', ['oxford'])
 .controller('ChartController', function($scope){
-    $scope.data = {
-      columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 50, 20, 10, 40, 15, 25]
-      ],
-      type: 'spline'
-    };
+  $scope.data = {
+    columns: [
+      ['data1', 30, 200, 100, 400, 150, 250],
+      ['data2', 50, 20, 10, 40, 15, 25]
+    ],
+    type: 'spline'
+  };
 });
 ```
 

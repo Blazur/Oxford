@@ -13,7 +13,7 @@ Oxford
   + you'll need the main file ```oxford.js```
 
 ## Installing
-1. Include ```oxford.js``` into your html.
+1. Include ```c3.min.js``` ```d3.min.js``` ```oxford.js``` into your html in that order.
 2. Include the dependencies into your angular app,  ```oxford```
 ```javascript
 angular.module('myApp', ['oxford'])

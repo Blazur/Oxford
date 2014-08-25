@@ -54,6 +54,15 @@ angular.module('chartApp', ['oxford'])
 });
 ```
 
+##Contributing
+1. Fork it
+2. Clone your fork
+3. Create new branch
+4. Make changes
+5. Make test and check test
+6. Build it, run ```gulp``` and the files will be linted, concatenated, and minified
+7. Push to new branch on your forked repo
+8. Pull request from your branch to Oxford master
 
 
 

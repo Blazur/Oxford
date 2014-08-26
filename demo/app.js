@@ -1,7 +1,18 @@
-angular.module('demo', [
-  'oxford'
-])
+'use strict';
 
+angular.module('demo', [
+  'oxford',
+  'ui.router'
+])
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/home');
+
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      template: '<h1>Home</h1>'
+    });
+})
 .controller('Controller', function($scope) {
   $scope.data = {
     columns: [

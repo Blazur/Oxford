@@ -7,11 +7,20 @@
   <link rel="stylesheet" type="text/css" href="../dist/main.css">
 </head>
 <body ng-app="demo">
-  <div ng-controller="Controller" class="material-card">
+  <!-- <div ng-controller="Controller" class="material-card">
     <ox-chart stats="data"></ox-chart>
-  </div>
+  </div> -->
 
+  <ox-nav>
+    <h1>side menu parent</h1>
+    <ox-nav-content>
+      <h1>{{ name }}</h1>
+    </ox-nav-content>
+    <ox-main-content>
+    </ox-main-content>
+  </ox-nav>
   <script src="../src/lib/angular/angular.js"></script>
+  <script src="../src/lib/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="../dist/oxford.js"></script>
   <script src="app.js"></script>
 </body>

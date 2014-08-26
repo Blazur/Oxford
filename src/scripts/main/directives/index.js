@@ -3,7 +3,7 @@
 
   angular.module('oxford.directives', [
     'oxford.directives.chart',
-    'oxford.directives.card'
+    'oxford.directives.sideMenu'
   ]);
 
 }());

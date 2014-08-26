@@ -12,13 +12,18 @@ describe('test', function() {
       ],
       type: 'area'
     };
-   $scope.axis = {
+    $scope.axis = {
       x: {
         type: 'category',
         categories: ['Josh', 'Mase', 'Xianhui', 'James', 'Joe', 'That One Guy']
       }
     };
-    element = "<ox-chart data='data' axis='axis'></ox-chart>";
+    $scope.options = {
+      test: 'test'
+    };
+
+
+    element = "<ox-chart id='chart' data='data' axis='axis' options='options'></ox-chart>";
     element = $compile(element)($scope);
     $scope.$digest();
     isolate = element.isolateScope();
@@ -35,5 +40,12 @@ describe('test', function() {
   it('should have an axis property on the isolate scope', function() {
     expect(isolate.axis).to.be.an('object');
   });
-
+  it('should have an options property on the isolate scope', function() {
+    expect(isolate.options).to.be.an('object');
+  });
+  it('should update chart', function() {
+    $scope.data.columns.pop();
+    $scope.$digest();
+    expect(isolate.data.columns.length).to.be(1);
+  });
 });

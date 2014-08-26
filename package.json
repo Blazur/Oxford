@@ -33,7 +33,9 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "expect.js": "^0.3.1",
     "mocha": "^1.21.4",
-    "karma-mocha": "^0.1.9"
+    "karma-mocha": "^0.1.9",
+    "karma-mocha-reporter": "^0.3.1",
+    "karma-coverage": "^0.2.6"
   },
   "engines": {
     "node": ">=0.10.0"

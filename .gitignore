@@ -1,6 +1,3 @@
 node_modules
-.sass-cache
-dist
-.tmp
 .DS_Store
 app/lib

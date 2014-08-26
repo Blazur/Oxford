@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Mon Aug 25 2014 11:51:43 GMT-0700 (PDT)
+// Generated on Tue Aug 26 2014 01:13:39 GMT-0700 (PDT)
 
 module.exports = function(config) {
   config.set({
@@ -10,17 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['mocha'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      //app files
-      'oxford.js',
-
-      //test files
-
-      ],
+    ],
 
 
     // list of files to exclude
@@ -59,7 +54,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'Opera', 'PhantomJS', 'Safari', 'Firefox'],
 
 
     // Continuous Integration mode

@@ -50,7 +50,7 @@ gulp.task('uglify', ['concat', 'concat:min'], function() {
 });
 //task to tell travis to run karma start and run in phantom.js
 gulp.task('test', $.shell.task([
-  'karma start'
+  'karma start karma.conf.js --browsers Firefox --single-run'
 ]));
 
 gulp.task('build', ['jshint', 'uglify', 'css']);

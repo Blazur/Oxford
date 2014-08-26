@@ -1,9 +1,10 @@
 {
   "name": "Oxford",
   "version": "0.0.0",
-  "homepage": "https://github.com/Hendrixer/Oxford",
+  "homepage": "https://github.com/Blazur/Oxford",
   "authors": [
-    "Hendrixer <willscottmoss@gmail.com>"
+    "Scott Moss <willscottmoss@gmail.com>",
+    "Mason Hargrove <maseh87@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -11,7 +12,17 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "demo",
+    "src",
+    "package.json",
+    "gulpfile.js",
+    "karma.conf.js",
+    "travis.yml",
+    ".gitignore",
+    ".bowerrc",
+    ".editorconfig",
+    ".jshintrc"
   ],
   "dependencies": {
     "angular": "~1.2.23",

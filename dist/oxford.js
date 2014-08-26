@@ -15422,61 +15422,47 @@
   }]);
 }(c3));
 
-;(function(){
-  'use strict';
-
-  angular.module('oxford.directives', [
-    'oxford.directives.chart',
-    'oxford.directives.sideMenu'
-  ]);
-
-}());
-
 ;(function() {
   'use strict';
 
-  angular.module('oxford.directives.sideMenu', [
+  angular.module('oxford.directives.dashboard', [
 
   ])
-  .directive('oxNav', function() {
+  .directive('oxDashboard', function() {
     return {
       transclude: true,
       replace: true,
       restrict: 'EA',
       scope: true,
-      template:'<div class="side-nav">' +
+      template:'<div class="dashboard">' +
       '<div ng-transclude></div>' +
       '</div>',
       controller: function($scope) {
-        console.log($scope);
-        this.name = 'Parent';
+
       },
       link: function() {
-        console.log('link parent');
       }
     };
   })
-  .directive('oxNavContent', function() {
+  .directive('oxDashboardNav', function() {
     return {
       transclude: true,
       replace: true,
       restrict: 'EA',
-      require: '^oxNav',
-      template: '<div class="nav-content">' +
+      require: '^oxDashboard',
+      template: '<div class="dashboard-nav">' +
         '<div ng-transclude></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {
-        console.log(navController.name);
-        $scope.name = navController.name;
       }
     };
   })
-  .directive('oxMainContent', function() {
+  .directive('oxDashboardContent', function() {
     return {
       replace: true,
-      require: '^oxNav',
+      require: '^oxDashboard',
       restrict: 'EA',
-      template: '<div class="main-content">' +
+      template: '<div class="dashboard-content">' +
         '<div ui-view></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {
@@ -15484,4 +15470,13 @@
       }
     };
   });
+}());
+;(function(){
+  'use strict';
+
+  angular.module('oxford.directives', [
+    'oxford.directives.chart',
+    'oxford.directives.dashboard'
+  ]);
+
 }());

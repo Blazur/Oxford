@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "homepage": "https://github.com/Blazur/Oxford",
   "authors": [
-    "Mason <maseh87@gmail.com>"
+    "Scott Moss <willscottmoss@gmail.com>",
+    "Mason Hargrove <maseh87@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -12,10 +13,24 @@
     "bower_components",
     "test",
     "tests",
-    "README.md"
+    "demo",
+    "src",
+    "package.json",
+    "gulpfile.js",
+    "karma.conf.js",
+    "travis.yml",
+    ".gitignore",
+    ".bowerrc",
+    ".editorconfig",
+    ".jshintrc"
   ],
   "dependencies": {
-    "d3": "*",
-    "c3": "*"
+    "angular": "~1.2.23",
+    "d3": "~3.4.11",
+    "c3": "~0.3.0",
+    "angular-ui-router": "~0.2.10"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.23"
   }
 }

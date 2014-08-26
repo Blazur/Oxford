@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Mon Aug 25 2014 11:51:43 GMT-0700 (PDT)
+// Generated on Tue Aug 26 2014 01:13:39 GMT-0700 (PDT)
 
 module.exports = function(config) {
   config.set({
@@ -10,17 +10,19 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['mocha'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      //app files
-      'oxford.js',
-
-      //test files
-
-      ],
+        'src/lib/angular/angular.js',
+        'src/lib/d3/d3.js',
+        'src/lib/c3/c3.js',
+        'src/scripts/**/*.js',
+        'src/lib/angular-mocks/angular-mocks.js',
+        'node_modules/expect.js/index.js',
+        'test/**/*.js'
+    ],
 
 
     // list of files to exclude
@@ -31,13 +33,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/scripts/**/*.js': 'coverage'
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha', 'coverage'],
 
 
     // web server port
@@ -64,6 +67,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };

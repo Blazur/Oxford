@@ -15,6 +15,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        'src/lib/angular/angular.js',
+        'dist/oxford.js',
+        'src/lib/angular-mocks/angular-mocks.js',
+        'src/scripts/**/*.js',
+        'node_modules/expect.js/index.js',
+        'test/**/*.js'
     ],
 
 
@@ -54,11 +60,11 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Opera', 'PhantomJS', 'Safari', 'Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };

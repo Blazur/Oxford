@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('oxford.directives', [
-    'oxford.directives.chart'
+    'oxford.directives.chart',
+    'oxford.directives.card'
   ]);
 
 }());

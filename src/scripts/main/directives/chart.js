@@ -11,7 +11,7 @@
     return {
       restrict: 'E',
       scope: {
-        data: '=',
+        stats: '=',
         options: '=',
         axis: '='
       },
@@ -31,11 +31,11 @@
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
-          data: scope.data,
+          data: scope.stats,
           axis: scope.axis,
           options: scope.options
         };
-        chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
+        chartData.data.type = attrs.chart? attrs.chart : scope.stats.type? scope.stats.type : 'line';
         if(scope.options) {
           Object.keys(scope.options).forEach(function(key) {
             chartData[key] = scope.options[key];

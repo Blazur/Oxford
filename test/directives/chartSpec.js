@@ -23,7 +23,7 @@ describe('test', function() {
     };
 
 
-    element = "<ox-chart id='chart' data='data' axis='axis' options='options'></ox-chart>";
+    element = "<ox-chart id='chart' stats='data' axis='axis' options='options'></ox-chart>";
     element = $compile(element)($scope);
     $scope.$digest();
     isolate = element.isolateScope();
@@ -34,7 +34,7 @@ describe('test', function() {
   });
 
   it('should have a data property on the isolate scope', function() {
-    expect(isolate.data).to.be.an('object');
+    expect(isolate.stats).to.be.an('object');
   });
 
   it('should have an axis property on the isolate scope', function() {

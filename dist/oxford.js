@@ -15358,6 +15358,16 @@
   ]);
 }());
 
+;(function() {
+
+  angular.module('oxford.directives.card', [
+
+  ])
+
+  .directive('oxCard', function() {
+
+  });
+}());
 ;(function(c3){
   'use strict';
 
@@ -15426,7 +15436,8 @@
   'use strict';
 
   angular.module('oxford.directives', [
-    'oxford.directives.chart'
+    'oxford.directives.chart',
+    'oxford.directives.card'
   ]);
 
 }());

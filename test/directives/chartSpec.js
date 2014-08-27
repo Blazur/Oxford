@@ -11,8 +11,7 @@ describe('test', function() {
       columns: [
         ['Profile Completion', 100, 90, 75, 88, 12, 40],
         ['Interests Declared', 75, 99, 65, 12, 24, 63]
-      ],
-      type: 'area'
+      ]
     };
     $scope.axis = {
       x: {
@@ -53,5 +52,10 @@ describe('test', function() {
     $scope.data.columns.pop();
     $scope.$digest();
     expect(isolate.data.columns.length).to.be(1);
+  });
+  //if no type is specified it should be set to line
+  it('should have a default type property of line', function() {
+    $scope.$digest();
+    expect(isolate.data.type).to.equal('line');
   });
 });

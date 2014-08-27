@@ -26,7 +26,7 @@
       replace: true,
       restrict: 'EA',
       require: '^oxDashboard',
-      template: '<div class="dashboard-nav g-medium--half">' +
+      template: '<div class="dashboard-nav">' +
         '<div ng-transclude></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {

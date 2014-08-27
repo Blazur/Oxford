@@ -18,17 +18,18 @@
 }
 .dashboard-nav {
   background: #e7e9fd;
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: fixed;
   width: 30%;
+  height: 100%;
 }
 .dashboard-content {
-  background: #e84e40;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 70%;
+  padding-left: 30%;
+}
+.card {
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fff !important;
 }
 .material-card {
   padding: 10px;

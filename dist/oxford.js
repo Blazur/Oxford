@@ -15476,7 +15476,30 @@
 
   angular.module('oxford.directives', [
     'oxford.directives.chart',
-    'oxford.directives.dashboard'
+    'oxford.directives.dashboard',
+    'oxford.directives.toolbar'
   ]);
 
+}());
+
+;(function() {
+  'use strict';
+
+  angular.module('oxford.directives.toolbar', [
+
+  ])
+  .directive('oxToolbar', function() {
+    return {
+      transclude: true,
+      replace: true,
+      restrict: 'EA',
+      scope: true,
+      template: '',
+      controller: function($scope) {
+
+      },
+      link: function() {
+      }
+    };
+  });
 }());

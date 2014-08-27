@@ -26,7 +26,7 @@
       replace: true,
       restrict: 'EA',
       require: '^oxDashboard',
-      template: '<div class="dashboard-nav">' +
+      template: '<div class="dashboard-nav g-wide--1">' +
         '<div ng-transclude></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {
@@ -38,7 +38,7 @@
       replace: true,
       require: '^oxDashboard',
       restrict: 'EA',
-      template: '<div class="dashboard-content">' +
+      template: '<div class="dashboard-content g--last">' +
         '<div ui-view></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {

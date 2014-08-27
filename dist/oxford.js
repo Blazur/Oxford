@@ -15371,7 +15371,7 @@
     return {
       restrict: 'E',
       scope: {
-        stats: '=',
+        data: '=',
         options: '=',
         axis: '='
       },
@@ -15391,11 +15391,11 @@
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
-          data: scope.stats,
+          data: scope.data,
           axis: scope.axis,
           options: scope.options
         };
-        chartData.data.type = attrs.chart? attrs.chart : scope.stats.type? scope.stats.type : 'line';
+        chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
         if(scope.options) {
           Object.keys(scope.options).forEach(function(key) {
             chartData[key] = scope.options[key];
@@ -15450,7 +15450,7 @@
       replace: true,
       restrict: 'EA',
       require: '^oxDashboard',
-      template: '<div class="dashboard-nav">' +
+      template: '<div class="dashboard-nav g-wide--1">' +
         '<div ng-transclude></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {
@@ -15462,7 +15462,7 @@
       replace: true,
       require: '^oxDashboard',
       restrict: 'EA',
-      template: '<div class="dashboard-content">' +
+      template: '<div class="dashboard-content g--last">' +
         '<div ui-view></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {

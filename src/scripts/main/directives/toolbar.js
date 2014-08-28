@@ -10,8 +10,10 @@
       replace: true,
       restrict: 'EA',
       scope: true,
-      template: '',
-      link: function() {
+      template: '<div class="ox-toolbar">' +
+        '<div ng-transclude></div>' +
+      '</div>',
+      link: function($scope, $element, $attr, navController) {
       }
     };
   });

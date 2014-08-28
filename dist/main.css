@@ -31,7 +31,7 @@
   position: relative;
   background-color: #fff !important;
 }
-.material-card {
+.card-material {
   padding: 10px;
   border-radius: 3px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

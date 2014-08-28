@@ -15450,8 +15450,11 @@
       replace: true,
       restrict: 'EA',
       require: '^oxDashboard',
-      template: '<div class="dashboard-nav">' +
-        '<div ng-transclude></div>' +
+      template:
+      '<div class="dashboard-nav">' +
+        '<div ng-transclude>' +
+          '<ox-toolbar></ox-toolbar>' +
+        '</div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {
       }
@@ -15494,11 +15497,10 @@
       replace: true,
       restrict: 'EA',
       scope: true,
-      template: '',
-      controller: function($scope) {
-
-      },
-      link: function() {
+      template: '<div class="ox-toolbar">' +
+        '<div ng-transclude></div>' +
+      '</div>',
+      link: function($scope, $element, $attr, navController) {
       }
     };
   });

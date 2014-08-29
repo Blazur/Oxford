@@ -101,20 +101,22 @@
             }
           }
         });
-
+        //ran if there are changes to the chart
         var onChartChanged = function(chart) {
           if(chart) {
             scope.data.type = chart;
             chart.load(data);
           }
         };
+        //watch the chart for any changes
         scope.$watch(function() {
           return attrs.chart;
         }, onChartChanged);
+
         //Generating the chart
         var chart = c3.generate(chartData);
-        // chart.internal.config.data_colors['Profile Completion'] = '#9c27b0';
-        // console.log(chart.internal.config.data_colors['Profile Completion'], ' chart');
+
+        //mocking data incoming from a server to test the $watch function
         $timeout(function() {
           scope.data = {
             columns: [

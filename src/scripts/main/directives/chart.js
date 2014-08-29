@@ -4,7 +4,7 @@
   angular.module('oxford.directives.chart', [
 
   ])
-  .directive('oxChart', [function() {
+  .directive('oxChart', ['$timeout', function($timeout) {
     //random number to attach to the chart id
     var chartIdCounter = Math.floor((Math.random()*1000)+1);
 
@@ -28,7 +28,8 @@
           chartIdCounter += 1;
         }
         scope.data.onclick = function(d, elem) {
-          console.log(elem, ' elem');
+          console.log(elem.style.fill, ' elem');
+          elem.style.fill = '#ce93d8';
           console.log(d, ' d');
         };
         //generate c3 chart data
@@ -46,15 +47,14 @@
           });
         }
         //Reload the chart if the data changes
-        var onDataChanged = function(data, oldData) {
+        scope.$watch('data', function(data, prevData) {
           if(chart) {
             chart.load(data);
-            if(data.columns.length < oldData.columns.length) {
-              chart.unload(['data' + oldData.columns.length]);
+            if(data.columns.length < prevData.columns.length) {
+              chart.unload(['data' + prevData.columns.length]);
             }
           }
-        };
-        // scope.$watch('data', onDataChanged, true);
+        });
 
         var onChartChanged = function(chart) {
           if(chart) {
@@ -63,12 +63,19 @@
           }
         };
         scope.$watch(function() {
-          console.log('yoooooo');
+          return attrs.chart;
         }, onChartChanged);
         //Generating the chart
         var chart = c3.generate(chartData);
-        console.log(chart.internal);
-
+        $timeout(function() {
+          console.log('changedd');
+          scope.data = {
+            columns: [
+              ['Profile Completion', 50, 39, 120, 145, 13],
+              ['Interests Declared', 100, 10, 34, 58, 48]
+            ]
+          };
+        }, 5000);
         // chart.internal.config.data_colors['Profile Completion'] = '#9c27b0';
         // console.log(chart.internal.config.data_colors['Profile Completion'], ' chart');
       }

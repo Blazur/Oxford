@@ -18,12 +18,9 @@ angular.module('demo', [
   $scope.data = {
     columns: [
       ['Profile Completion', 100, 90, 75, 88, 12, 40],
-      ['Interests Declared', 100, 10, 65, 14, 24, 100, 80]
+      ['Interests Declared', 100, 10, 65, 40, 24, 100, 80]
     ],
     type: 'spline'
-    // onclick: function (d, i) {
-    //   console.log(i.style);
-    // }
   };
    $scope.axis = {
     x: {

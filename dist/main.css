@@ -1,3 +1,43 @@
-.thing {
-  color: #fff;
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.shadow-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.shadow-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+}
+.dashboard {
+  position: relative;
+}
+.dashboard-nav {
+  background: #e7e9fd;
+  position: fixed;
+  width: 20%;
+  height: 100%;
+}
+.dashboard-content {
+  padding-left: 20%;
+}
+.card {
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fff !important;
+}
+.card-material {
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: #fff !important;
+  position: relative;
+}
+.ox-toolbar {
+  background-color: #add8e6;
 }

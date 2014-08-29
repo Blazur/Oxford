@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Oxford Demo</title>
   <link rel="stylesheet" href="../dist/oxford.css">
+  <link rel="stylesheet" type="text/css" href="../dist/main.css">
 </head>
 <body ng-app="demo">
-  <div ng-controller="Controller">
+  <div ng-controller="Controller" class="material-card">
     <ox-chart data="data"></ox-chart>
   </div>
 
+  <ox-dashboard>
+    <ox-toolbar>Toolbar</ox-toolbar>
+    <ox-dashboard-nav>
+      <h2>Dashboard</h2>
+    </ox-dashboard-nav>
+    <!-- oxford's ui-view -->
+    <ox-dashboard-content></ox-dashboard-content>
+  </ox-dashboard>
+
+
+  <script src="../src/lib/d3/d3.min.js"></script>
+  <script src="../src/lib/c3/c3.js"></script>
   <script src="../src/lib/angular/angular.js"></script>
-  <script src="../dist/oxford.js"></script>
+  <script src="../src/lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../src/scripts/main/directives/chart.js"></script>
+  <script src="../src/scripts/main/directives/dashboard.js"></script>
+  <script src="../src/scripts/main/directives/toolbar.js"></script>
+  <script src="../src/scripts/main/directives/index.js"></script>
+  <script src="../src/scripts/main.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

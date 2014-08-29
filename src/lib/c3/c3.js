@@ -4890,7 +4890,6 @@
 
         return function (d) {
             var id = d.id || d, color;
-
             // if callback function is provided
             if (colors[id] instanceof Function) {
                 color = colors[id](d);

@@ -15,7 +15,7 @@
         options: '=',
         axis: '='
       },
-
+      replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
         var chartId;
@@ -27,7 +27,10 @@
           element.attr('id', chartId);
           chartIdCounter += 1;
         }
-
+        scope.data.onclick = function(d, elem) {
+          console.log(elem, ' elem');
+          console.log(d, ' d');
+        };
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
@@ -36,6 +39,7 @@
           options: scope.options
         };
         chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
+
         if(scope.options) {
           Object.keys(scope.options).forEach(function(key) {
             chartData[key] = scope.options[key];
@@ -50,13 +54,23 @@
             }
           }
         };
-        scope.$watch('data', onDataChanged, true);
+        // scope.$watch('data', onDataChanged, true);
 
+        var onChartChanged = function(chart) {
+          if(chart) {
+            scope.data.type = chart;
+            chart.load(data);
+          }
+        };
         scope.$watch(function() {
-          return attrs.chart;
-        });
+          console.log('yoooooo');
+        }, onChartChanged);
         //Generating the chart
         var chart = c3.generate(chartData);
+        console.log(chart.internal);
+
+        // chart.internal.config.data_colors['Profile Completion'] = '#9c27b0';
+        // console.log(chart.internal.config.data_colors['Profile Completion'], ' chart');
       }
     };
   }]);

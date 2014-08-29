@@ -8,18 +8,19 @@
   <link rel="stylesheet" type="text/css" href="../dist/main.css">
 </head>
 <body ng-app="demo">
-  <div ng-controller="Controller" class="material-card">
-    <ox-chart data="data"></ox-chart>
+  <div ng-controller="Controller">
+    <div class='card-material'>
+      <ox-chart data="data"></ox-chart>
+    </div>
   </div>
 
-  <ox-dashboard>
+  <!-- <ox-dashboard>
     <ox-toolbar>Toolbar</ox-toolbar>
     <ox-dashboard-nav>
       <h2>Dashboard</h2>
     </ox-dashboard-nav>
-    <!-- oxford's ui-view -->
     <ox-dashboard-content></ox-dashboard-content>
-  </ox-dashboard>
+  </ox-dashboard> -->
 
 
   <script src="../src/lib/d3/d3.min.js"></script>

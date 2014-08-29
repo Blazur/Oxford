@@ -5,25 +5,28 @@
 
   ])
   .directive('oxChart', ['$timeout', function($timeout) {
-    var lightPattern = ['#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896'];
-    var darkPattern = ['#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7'];
-
+    //color patterns for chart coloring
+    var patterns = {
+      light: ['#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896'],
+      dark: ['#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7'],
+      material: ['#e51c23', '#673ab7', '#5677fc', '#03a9f4', '#00bcd4', '#259b24', '#ffeb3b', '#ff9800']
+    };
 
     //random number to attach to the chart id
     var chartIdCounter = Math.floor((Math.random()*1000)+1);
 
     return {
-      restrict: 'E',
+      restrict: 'EA',
       scope: {
         data: '=',
         options: '=',
         axis: '='
       },
+      template: '<div style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
-        console.log(attrs);
-
+        console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
           console.log('trueee');
@@ -43,9 +46,9 @@
           scope.zoom = { zoom: { enabled: true } };
         }
         //ability to change the color pattern
-        if(attrs.pattern === 'light') {
+        if(attrs.pattern) {
           scope.color = {};
-          scope.color.pattern = lightPattern;
+          scope.color.pattern = patterns[attrs.pattern];
         } else {
           scope.color = {};
           scope.color.pattern = darkPattern;

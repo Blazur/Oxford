@@ -5,6 +5,10 @@
 
   ])
   .directive('oxChart', ['$timeout', function($timeout) {
+    var lightPattern = ['#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896'];
+    var darkPattern = ['#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7'];
+
+
     //random number to attach to the chart id
     var chartIdCounter = Math.floor((Math.random()*1000)+1);
 
@@ -38,7 +42,14 @@
         if(attrs.zoom === 'true') {
           scope.zoom = { zoom: { enabled: true } };
         }
-
+        //ability to change the color pattern
+        if(attrs.pattern === 'light') {
+          scope.color = {};
+          scope.color.pattern = lightPattern;
+        } else {
+          scope.color = {};
+          scope.color.pattern = darkPattern;
+        }
 
 
         var chartId;
@@ -66,7 +77,8 @@
           options: scope.options,
           grid: scope.grid,
           subchart: scope.subchart,
-          zoom: scope.zoom
+          zoom: scope.zoom,
+          color: scope.color
         };
         chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
 

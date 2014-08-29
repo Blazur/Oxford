@@ -32,5 +32,4 @@ angular.module('demo', [
     }
   };
 
-  console.log();
 });

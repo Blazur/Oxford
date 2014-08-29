@@ -83,8 +83,10 @@
           zoom: scope.zoom,
           color: scope.color
         };
+        //assign a type of line if undefined
         chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
 
+        //if scope.options are given replace the data with the options data
         if(scope.options) {
           Object.keys(scope.options).forEach(function(key) {
             chartData[key] = scope.options[key];
@@ -113,6 +115,18 @@
         var chart = c3.generate(chartData);
         // chart.internal.config.data_colors['Profile Completion'] = '#9c27b0';
         // console.log(chart.internal.config.data_colors['Profile Completion'], ' chart');
+        $timeout(function() {
+          scope.data = {
+            columns: [
+              ['sample16', 30, 200, 100, 64, 150, 250, 150, 200, 170, 240, 350, 26, 100, 400],
+              ['sample2', 150, 250, 150, 200, 170, 240, 230, 150, 250, 150, 200, 170, 240, 30],
+              ['sample3', 200, 100, 400, 150, 250, 150, 46, 170, 240, 62, 150, 100, 400, 350],
+              ['sample4', 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 198, 143, 24]
+            ],
+            type: 'spline'
+          };
+        }, 5000);
+
       }
     };
   }]);

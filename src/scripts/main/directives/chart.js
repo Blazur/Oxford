@@ -5,6 +5,7 @@
 
   ])
   .directive('oxChart', ['$timeout', function($timeout) {
+
     //color patterns for chart coloring
     var patterns = {
       light: ['#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896'],
@@ -29,7 +30,6 @@
         console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
-          console.log('trueee');
           scope.grid = {
             x: { show: true },
             y: { show: true}
@@ -51,7 +51,7 @@
           scope.color.pattern = patterns[attrs.pattern];
         } else {
           scope.color = {};
-          scope.color.pattern = darkPattern;
+          scope.color.pattern = patterns.dark ;
         }
 
 
@@ -118,17 +118,17 @@
 
         //mocking data incoming from a server to test the $watch function
         $timeout(function() {
-          scope.data = {
-            columns: [
-              ['sample16', 30, 200, 100, 64, 150, 250, 150, 200, 170, 240, 350, 26, 100, 400],
-              ['sample2', 150, 250, 150, 200, 170, 240, 230, 150, 250, 150, 200, 170, 240, 30],
-              ['sample3', 200, 100, 400, 150, 250, 150, 46, 170, 240, 62, 150, 100, 400, 350],
-              ['sample4', 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 198, 143, 24]
-            ],
-            type: 'spline'
-          };
+        //   scope.data = {
+        //     columns: [
+        //       ['sample16', 30, 200, 100, 64, 150, 250, 150, 200, 170, 240, 350, 26, 100, 400],
+        //       ['sample2', 150, 250, 150, 200, 170, 240, 230, 150, 250, 150, 200, 170, 240, 30],
+        //       ['sample3', 200, 100, 400, 150, 250, 150, 46, 170, 240, 62, 150, 100, 400, 350],
+        //       ['sample4', 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 198, 143, 24]
+        //     ],
+        //     type: 'spline'
+        //   };
+          chart.transform('spline');
         }, 5000);
-
       }
     };
   }]);

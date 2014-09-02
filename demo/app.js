@@ -17,15 +17,19 @@ angular.module('demo', [
 .controller('Controller', function($scope) {
   $scope.data = {
     columns: [
-      ['Profile Completion', 100, 90, 75, 88, 12, 40],
-      ['Interests Declared', 75, 99, 65, 12, 24, 63]
+      ['sample1', 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400],
+      ['sample2', 150, 250, 150, 200, 170, 240, 100, 150, 250, 150, 200, 170, 240, 30],
+      ['sample3', 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 350],
+      ['sample4', 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 40]
     ],
     type: 'area'
   };
-   $scope.axis = {
+
+  $scope.axis = {
     x: {
       type: 'category',
       categories: ['Josh', 'Mase', 'Xianhui', 'James', 'Joe', 'That One Guy']
     }
   };
+
 });

@@ -1,4 +1,4 @@
-describe('test', function() {
+describe('chart', function() {
   //load variables in closure scope to be used throughout tests
   var $scope, element, isolate;
   //load the chart module to gain access to the chart directive
@@ -23,10 +23,10 @@ describe('test', function() {
       test: 'test'
     };
 
-
-    element = "<ox-chart id='chart' data='data' axis='axis' options='options'></ox-chart>";
+    element = "<ox-chart id='chart' data='data' axis='axis' options='options' pattern='dark'></ox-chart>";
     //complile the element to gain access to the link function
     element = $compile(element)($scope);
+    console.log(element);
     //digest the scope to register the element
     $scope.$digest();
     isolate = element.isolateScope();
@@ -58,4 +58,17 @@ describe('test', function() {
     $scope.$digest();
     expect(isolate.data.type).to.equal('line');
   });
+
+  it('should have a color property', function() {
+    expect(isolate.color).to.be.an('object');
+  });
 });
+
+
+
+
+
+
+
+
+

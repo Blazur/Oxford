@@ -1,9 +1,8 @@
 ;(function(c3){
   'use strict';
 
-  angular.module('oxford.directives.chart', [
+  angular.module('oxford.directives.chart', [])
 
-  ])
   .directive('oxChart', ['$timeout', function($timeout) {
 
     //color patterns for chart coloring

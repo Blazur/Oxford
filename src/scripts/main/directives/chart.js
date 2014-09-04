@@ -117,7 +117,7 @@
         var chart = c3.generate(chartData);
 
         //mocking data incoming from a server to test the $watch function
-        $timeout(function() {
+        // $timeout(function() {
         //   scope.data = {
         //     columns: [
         //       ['sample16', 30, 200, 100, 64, 150, 250, 150, 200, 170, 240, 350, 26, 100, 400],
@@ -127,8 +127,8 @@
         //     ],
         //     type: 'spline'
         //   };
-          chart.transform('spline');
-        }, 5000);
+        //   // chart.transform('spline');
+        // }, 5000);
       }
     };
   }]);

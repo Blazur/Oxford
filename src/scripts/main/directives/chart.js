@@ -22,7 +22,7 @@
         options: '=',
         axis: '='
       },
-      template: '<div style="height: 300px;"></div>',
+      template: '<div class="chart" style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one

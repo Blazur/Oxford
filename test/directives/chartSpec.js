@@ -26,7 +26,6 @@ describe('chart', function() {
     element = "<ox-chart id='chart' data='data' axis='axis' options='options' pattern='dark'></ox-chart>";
     //complile the element to gain access to the link function
     element = $compile(element)($scope);
-    console.log(element);
     //digest the scope to register the element
     $scope.$digest();
     isolate = element.isolateScope();

@@ -11,7 +11,7 @@ angular.module('demo', [
     .state('home', {
       url: '/home',
       template:
-      '<div>Home Tpl</div>'
+      '<div>' + '<div class="card">Yo</div>' + '</div>'
     });
 })
 .controller('Controller', function($scope) {

@@ -5,7 +5,8 @@
 
   .directive('card', [function() {
     return {
-      restrict: 'EAC'
+      restrict: 'EAC',
+      template: '<div></div>'
     };
   }]);
 

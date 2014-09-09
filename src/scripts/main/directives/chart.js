@@ -71,6 +71,7 @@
           elem.style.fill = '#ce93d8';
           console.log(d, ' d');
         };
+
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),

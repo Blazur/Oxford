@@ -69,8 +69,7 @@
 }
 svg {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  margin-left: 50px;
-  margin-top: 10px;
+  margin: 10px 10px 10px 50px;
   border-radius: 5px;
 }
 .shadow-1 {
@@ -101,7 +100,13 @@ ox-card {
   border-radius: 3px;
   padding: 15px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  width: 150px;
-  height: 75px;
+  width: 300px;
+  height: 150px;
   display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.row {
+  padding: 20px 20px 20px 0px;
+  margin-left: 50px;
 }

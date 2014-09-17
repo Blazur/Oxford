@@ -15357,12 +15357,24 @@
   ]);
 }());
 
+;(function(){
+  'use strict';
+
+  angular.module('oxford.directives.card', [])
+
+  .directive('card', [function() {
+    return {
+      restrict: 'EAC',
+      template: '<div></div>'
+    };
+  }]);
+
+}());
 ;(function(c3){
   'use strict';
 
-  angular.module('oxford.directives.chart', [
+  angular.module('oxford.directives.chart', [])
 
-  ])
   .directive('oxChart', ['$timeout', function($timeout) {
 
     //color patterns for chart coloring
@@ -15382,11 +15394,12 @@
         options: '=',
         axis: '='
       },
-      template: '<div style="height: 300px;"></div>',
+      template: '<div class="chart" style="height: 300px;"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
         console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
+        console.log('element  ', element);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
           scope.grid = {
@@ -15431,6 +15444,7 @@
           elem.style.fill = '#ce93d8';
           console.log(d, ' d');
         };
+
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
@@ -15476,7 +15490,7 @@
         var chart = c3.generate(chartData);
 
         //mocking data incoming from a server to test the $watch function
-        $timeout(function() {
+        // $timeout(function() {
         //   scope.data = {
         //     columns: [
         //       ['sample16', 30, 200, 100, 64, 150, 250, 150, 200, 170, 240, 350, 26, 100, 400],
@@ -15486,8 +15500,8 @@
         //     ],
         //     type: 'spline'
         //   };
-          chart.transform('spline');
-        }, 5000);
+        //   // chart.transform('spline');
+        // }, 5000);
       }
     };
   }]);

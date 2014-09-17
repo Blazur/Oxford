@@ -7,9 +7,11 @@
     return {
       restrict: 'EAC',
       replace: true,
-      template: '<div class="card-material"></div>',
+      transclude: true,
+      template: '<div class="card-material" draggable>' +
+        '<div ng-transclude></div>' +
+      '</div>',
       link: function(scope, element, attr) {
-        Draggable.create(element);
       }
     };
   });

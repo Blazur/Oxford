@@ -85,7 +85,7 @@
           color: scope.color,
           size: {
             height: 300,
-            width: 800
+            width: 930
           }
         };
         //assign a type of line if undefined

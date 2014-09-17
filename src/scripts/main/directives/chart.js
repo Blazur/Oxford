@@ -27,6 +27,7 @@
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
         console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
+        console.log('element  ', element);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
           scope.grid = {

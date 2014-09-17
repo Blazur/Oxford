@@ -10,8 +10,9 @@ angular.module('demo', [
   $stateProvider
     .state('home', {
       url: '/home',
-      template:
-      '<div>' + '<div class="card">Yo</div>' + '</div>'
+      templateUrl: 'content',
+      controller: 'Controller'
+      // '<div>' + '<div class="shadow-5"></div>' + '</div>'
     });
 })
 .controller('Controller', function($scope) {

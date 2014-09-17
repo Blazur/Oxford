@@ -22,7 +22,7 @@
         options: '=',
         axis: '='
       },
-      template: '<div class="chart" style="height: 300px;"></div>',
+      template: '<div></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
@@ -82,7 +82,14 @@
           grid: scope.grid,
           subchart: scope.subchart,
           zoom: scope.zoom,
-          color: scope.color
+          color: scope.color,
+          size: {
+            height: 300,
+            width: 800
+          },
+          padding: {
+            left: 100
+          }
         };
         //assign a type of line if undefined
         chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';

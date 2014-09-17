@@ -122,7 +122,9 @@
         var chart = c3.generate(chartData);
 
         //use gsap to allow for dragging
-        Draggable.create(element);
+        Draggable.create(element, {
+          bounds: {top: 10, left: 10, width: 1000, height: 800}
+        });
 
         //mocking data incoming from a server to test the $watch function
         // $timeout(function() {

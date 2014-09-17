@@ -15362,13 +15362,17 @@
 
   angular.module('oxford.directives.card', [])
 
-  .directive('card', [function() {
+  .directive('oxCard', function() {
     return {
       restrict: 'EAC',
-      template: '<div></div>'
+      transclude: true,
+      scope: true,
+      template: '<div ng-transclude></div>',
+      link: function(scope, element, attr) {
+        Draggable.create(element);
+      }
     };
-  }]);
-
+  });
 }());
 ;(function(c3){
   'use strict';
@@ -15572,7 +15576,8 @@
     'oxford.directives.chart',
     'oxford.directives.dashboard',
     'oxford.directives.toolbar',
-    'oxford.directives.list'
+    'oxford.directives.list',
+    'oxford.directives.card'
   ]);
 
 }());

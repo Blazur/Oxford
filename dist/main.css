@@ -32,7 +32,7 @@
   position: relative;
 }
 .dashboard-nav {
-  background: #e7e9fd;
+  background: rgba(0,23,255,0.29);
   position: fixed;
   width: 20%;
   height: 100%;
@@ -42,7 +42,9 @@
   padding-left: 20%;
 }
 .ox-toolbar {
+  background-color: rgba(255,6,76,0.48);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  height: 60px;
 }
 .shadow-1 {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -61,7 +63,7 @@
 }
 chart,
 svg {
-  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   margin-left: 50px;
   margin-top: 10px;
   border-radius: 5px;
@@ -78,7 +80,4 @@ svg {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background-color: #fff !important;
   position: relative;
-}
-.ox-toolbar {
-  background-color: #add8e6;
 }

@@ -3,11 +3,14 @@
 
   angular.module('oxford.directives.card', [])
 
-  .directive('card', [function() {
+  .directive('oxCard', function() {
     return {
       restrict: 'EAC',
-      template: '<div></div>'
+      replace: true,
+      template: '<div class="card-material"></div>',
+      link: function(scope, element, attr) {
+        Draggable.create(element);
+      }
     };
-  }]);
-
+  });
 }());

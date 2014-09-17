@@ -5,7 +5,8 @@
     'oxford.directives.chart',
     'oxford.directives.dashboard',
     'oxford.directives.toolbar',
-    'oxford.directives.list'
+    'oxford.directives.list',
+    'oxford.directives.card'
   ]);
 
 }());

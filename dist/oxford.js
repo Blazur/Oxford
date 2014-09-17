@@ -15365,11 +15365,12 @@
   .directive('oxCard', function() {
     return {
       restrict: 'EAC',
+      replace: true,
       transclude: true,
-      scope: true,
-      template: '<div ng-transclude></div>',
+      template: '<div class="card-material" draggable>' +
+        '<div ng-transclude></div>' +
+      '</div>',
       link: function(scope, element, attr) {
-        Draggable.create(element);
       }
     };
   });
@@ -15572,12 +15573,29 @@
 ;(function(){
   'use strict';
 
+  angular.module('oxford.directives.drag', [])
+
+  .directive('draggable', function() {
+    return function(scope, element, attr) {
+      if(attr.draggable !== 'false') {
+        Draggable.create(element, {
+        bounds: {top: 10, left: 10, width: 1000, height: 800},
+        throwProps: {top:{min:0, max:1000, end:[0,200,400,600]}}
+        });
+      }
+    };
+  });
+}());
+;(function(){
+  'use strict';
+
   angular.module('oxford.directives', [
     'oxford.directives.chart',
     'oxford.directives.dashboard',
     'oxford.directives.toolbar',
     'oxford.directives.list',
-    'oxford.directives.card'
+    'oxford.directives.card',
+    'oxford.directives.drag'
   ]);
 
 }());

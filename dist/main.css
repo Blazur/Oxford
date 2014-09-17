@@ -103,4 +103,5 @@ ox-card {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   width: 150px;
   height: 75px;
+  display: inline-block;
 }

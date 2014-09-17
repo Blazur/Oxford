@@ -86,9 +86,6 @@
           size: {
             height: 300,
             width: 800
-          },
-          padding: {
-            left: 100
           }
         };
         //assign a type of line if undefined

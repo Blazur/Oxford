@@ -15394,7 +15394,7 @@
         options: '=',
         axis: '='
       },
-      template: '<div class="chart"></div>',
+      template: '<div></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one

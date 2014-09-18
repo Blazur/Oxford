@@ -15581,7 +15581,7 @@
         Draggable.create(element, {
           bounds: document.getElementsByClassName('dashboard-content'),
           type: 'x,y',
-          edgeResistance: 0.65,
+          edgeResistance: 0.85,
           throwProps: true
         });
       }

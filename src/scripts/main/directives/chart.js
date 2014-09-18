@@ -22,7 +22,7 @@
         options: '=',
         axis: '='
       },
-      template: '<div draggable></div>',
+      template: '<div draggable class="chart"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one

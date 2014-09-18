@@ -22,7 +22,7 @@
         options: '=',
         axis: '='
       },
-      template: '<div></div>',
+      template: '<div draggable></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
@@ -85,7 +85,7 @@
           color: scope.color,
           size: {
             height: 300,
-            width: 930
+            width: 950
           }
         };
         //assign a type of line if undefined
@@ -122,9 +122,9 @@
         var chart = c3.generate(chartData);
 
         //use gsap to allow for dragging
-        Draggable.create(element, {
-          bounds: {top: 10, left: 10, width: 1000, height: 800}
-        });
+        // Draggable.create(element, {
+        //   bounds: {top: 10, left: 10, width: 1000, height: 800}
+        // });
 
         //mocking data incoming from a server to test the $watch function
         // $timeout(function() {

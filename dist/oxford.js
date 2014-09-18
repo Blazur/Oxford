@@ -15399,7 +15399,7 @@
         options: '=',
         axis: '='
       },
-      template: '<div draggable></div>',
+      template: '<div draggable class="chart"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
@@ -15577,10 +15577,9 @@
 
   .directive('draggable', function() {
     return function(scope, element, attr) {
-      console.log(element);
       if(attr.draggable !== 'false') {
         Draggable.create(element, {
-          bounds: {top: 10, left: 10, width: 925},
+          bounds: document.getElementsByClassName('dashboard-content'),
           type: 'x,y',
           edgeResistance: 0.65,
           throwProps: true

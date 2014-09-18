@@ -15543,7 +15543,7 @@
       }
     };
   })
-  .directive('oxDashboardNav', function() {
+  .directive('oxDashboardNav', function($window) {
     return {
       transclude: true,
       replace: true,

@@ -33,7 +33,7 @@
 }
 .dashboard-nav {
   background: rgba(0,23,255,0.29);
-  position: fixed;
+  position: absolute;
   width: 20%;
   height: 100%;
   box-shadow: 0 19px 38px rgba(0,0,0,0.3);

@@ -7,7 +7,7 @@ describe('chart', function() {
   beforeEach(inject(function($rootScope, $compile) {
     $scope = $rootScope.$new();
     //data that is used to populate the chart directive
-    $scope.data = {
+    $scope.options = {
       columns: [
         ['Profile Completion', 100, 90, 75, 88, 12, 40],
         ['Interests Declared', 75, 99, 65, 12, 24, 63]
@@ -19,24 +19,20 @@ describe('chart', function() {
         categories: ['Josh', 'Mase', 'Xianhui', 'James', 'Joe', 'That One Guy']
       }
     };
-    $scope.options = {
-      test: 'test'
-    };
 
-    element = "<ox-chart id='chart' data='data' axis='axis' options='options' pattern='dark'></ox-chart>";
+    element = "<ox-chart id='chart' options='options' axis='axis' pattern='dark' grid='true' subchart='true'></ox-chart>";
+
     //complile the element to gain access to the link function
     element = $compile(element)($scope);
+
     //digest the scope to register the element
     $scope.$digest();
+
     isolate = element.isolateScope();
   }));
 
   it('should have isolate scope', function() {
     expect(isolate).to.be.an('object');
-  });
-
-  it('should have a data property on the isolate scope', function() {
-    expect(isolate.data).to.be.an('object');
   });
 
   it('should have an axis property on the isolate scope', function() {
@@ -48,18 +44,24 @@ describe('chart', function() {
   });
 
   it('should update chart', function() {
-    $scope.data.columns.pop();
+    $scope.options.columns.pop();
     $scope.$digest();
-    expect(isolate.data.columns.length).to.be(1);
-  });
-  //if no type is specified it should be set to line
-  it('should have a default type property of line', function() {
-    $scope.$digest();
-    expect(isolate.data.type).to.equal('line');
+    expect(isolate.options.columns.length).to.be(1);
   });
 
   it('should have a color property', function() {
     expect(isolate.color).to.be.an('object');
+  });
+
+  it('should have grid attribute option', function() {
+    $scope.$digest();
+    expect(isolate.grid.x).to.be.an('object');
+    expect(isolate.grid.y).to.be.an('object');
+  });
+
+  it('should have subchart attribute option', function() {
+    $scope.$digest();
+    expect(isolate.subchart.show).to.be(true);
   });
 });
 

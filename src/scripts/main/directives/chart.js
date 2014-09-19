@@ -25,9 +25,6 @@
       template: '<div draggable class="chart"></div>',
       replace: true,
       link: function(scope, element, attrs) {
-        //assign an id to the chart if it doesn't have one
-        console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
-        console.log('element  ', element);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
           scope.grid = {
@@ -121,11 +118,6 @@
 
         //Generating the chart
         var chart = c3.generate(chartData);
-
-        //use gsap to allow for dragging
-        // Draggable.create(element, {
-        //   bounds: {top: 10, left: 10, width: 1000, height: 800}
-        // });
 
         //mocking data incoming from a server to test the $watch function
         setInterval(function() {

@@ -8,7 +8,7 @@
       restrict: 'EAC',
       replace: true,
       transclude: true,
-      template: '<div class="card-material" draggable id="ox">' +
+      template: '<div class="card-material" draggable>' +
         '<div ng-transclude></div>' +
       '</div>',
       link: function(scope, element, attr) {

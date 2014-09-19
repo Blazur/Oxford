@@ -10,9 +10,9 @@ describe('Drag Directive', function() {
     element = "<draggable></draggable>";
     element = $compile(element)($scope);
     $scope.$digest();
+    console.log(element);
   }));
   it('should have a draggable directive', function() {
-  //   console.log(element);
     expect(element).to.be.an('object');
   });
 });

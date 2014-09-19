@@ -113,9 +113,9 @@
 
         //Generating the chart
         var chart = c3.generate(chartData);
-        console.log(scope, ' scope');
-        if(scope.chart) {
-          scope.chart = chart;
+        console.log(scope.$parent, ' scope');
+        if(scope.$parent.chart) {
+          scope.$parent.chart = chart;
         }
       }
     };

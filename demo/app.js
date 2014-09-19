@@ -12,7 +12,6 @@ angular.module('demo', [
       url: '/home',
       templateUrl: 'content',
       controller: 'Controller'
-      // '<div>' + '<div class="shadow-5"></div>' + '</div>'
     });
 })
 .controller('Controller', function($scope) {
@@ -27,12 +26,4 @@ angular.module('demo', [
     ],
     type: 'line'
   };
-
-  // $scope.axis = {
-  //   x: {
-  //     type: 'timeseries',
-  //     categories: ['Josh', 'Mase', 'Xianhui', 'James', 'Joe', 'That One Guy']
-  //   }
-  // };
-
 });

@@ -1,10 +1,11 @@
 describe('chart', function() {
   //load variables in closure scope to be used throughout tests
-  var $scope, element, isolate;
+  var $scope, element, isolate, errorElement, compile;
   //load the chart module to gain access to the chart directive
   beforeEach(module('oxford.directives.chart'));
   //inject the rootscope and compile function to test the chart directive
   beforeEach(inject(function($rootScope, $compile) {
+    compile = $compile;
     $scope = $rootScope.$new();
     //data that is used to populate the chart directive
     $scope.options = {
@@ -21,9 +22,9 @@ describe('chart', function() {
     };
 
     element = "<ox-chart id='chart' options='options' axis='axis' pattern='dark' grid='true' subchart='true'></ox-chart>";
-
     //complile the element to gain access to the link function
     element = $compile(element)($scope);
+
 
     //digest the scope to register the element
     $scope.$digest();
@@ -41,6 +42,12 @@ describe('chart', function() {
 
   it('should have an options property on the isolate scope', function() {
     expect(isolate.options).to.be.an('object');
+  });
+
+  it('should log an error when options property is not given', function() {
+    errorElement = "<ox-chart id='chart'></ox-chart>";
+    errorElement = compile(errorElement);
+    expect(errorElement).withArgs($scope).to.throwException();
   });
 
   it('should update chart', function() {

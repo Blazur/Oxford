@@ -77,8 +77,8 @@
         };
 
 
-        if(!chartData.data) {
-          console.log('You must have an options attribute on your chart directive!');
+        if(!options) {
+          throw 'You must have an options attribute on your chart directive!';
         }
 
         //Reload the chart if the data changes
@@ -98,7 +98,7 @@
           }
         });
 
-        //ran if there are changes to the chart
+        //run if there are changes to the chart
         var onChartChanged = function(chart) {
           if(chart) {
             scope.data.type = chart;

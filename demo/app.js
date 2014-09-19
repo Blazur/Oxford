@@ -25,7 +25,6 @@ angular.module('demo', [
       [180, 120, 280]
     ]
   };
-  $scope.axis = 'yo';
 
   //mocking data incoming from a server to test the $watch function
   setInterval(function() {

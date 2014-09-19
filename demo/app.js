@@ -26,8 +26,7 @@ angular.module('demo', [
     ]
   };
   $scope.axis = 'yo';
-  $scope.chart = {yo: 'yo'};
-  console.log($scope);
+
   //mocking data incoming from a server to test the $watch function
   setInterval(function() {
     $timeout(function() {

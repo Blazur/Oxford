@@ -28,15 +28,14 @@
             }
           },
           onDrag: function(e) {
-            if(this.hitTest('div.card-material')) {
-              // console.log(this);
+            if(this.hitTest(element)) {
+              console.log(this, ' this');
             }
           },
           onDragEnd: function() {
-            if(this.hitTest('div.card-material')) {
-              console.log('Done Dragging');
-              // console.log(this);
-              TweenLite.to(element, 0.7, {x: startX, y: startY, ease: Power2.easeInOut});
+            if(this.hitTest(element, 20)) {
+              console.log('hit');
+              TweenLite.to(element, 0.5, {x: startX, y: startY, ease: Power2.easeInOut});
             }
           }
         });

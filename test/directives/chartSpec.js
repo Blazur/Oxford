@@ -45,7 +45,7 @@ describe('chart', function() {
   });
 
   it('should log an error when options property is not given', function() {
-    errorElement = "<ox-chart id='chart'></ox-chart>";
+    errorElement = "<ox-chart></ox-chart>";
     errorElement = compile(errorElement);
     expect(errorElement).withArgs($scope).to.throwException();
   });
@@ -69,6 +69,13 @@ describe('chart', function() {
   it('should have subchart attribute option', function() {
     $scope.$digest();
     expect(isolate.subchart.show).to.be(true);
+  });
+
+  it('assign a default id if not given', function() {
+    errorElement = "<ox-chart options='options'></ox-chart>";
+    errorElement = compile(errorElement)($scope);
+    $scope.$digest();
+    expect(errorElement.attr('id')).to.be.contain('c3-chart');
   });
 });
 

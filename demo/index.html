@@ -10,23 +10,35 @@
 <body ng-app="demo">
 
 
-  <div ng-controller="Controller">
+  <!-- <div ng-controller="Controller">
 
+    <div ox-chart data="data" pattern="material"></div>
 
-    <div ox-chart data="data" pattern="dark"></div>
+  </div> -->
 
-
-  </div>
-
-  <!-- <ox-dashboard>
-    <ox-toolbar>Toolbar</ox-toolbar>
+  <!-- Top ToolBar -->
+  <ox-toolbar></ox-toolbar>
+  <ox-dashboard>
+    <!-- Side NavBar -->
     <ox-dashboard-nav>
-      <h2>Dashboard</h2>
+      <!-- Ul -->
+      <ox-list>
+        <ox-item>Item 1</ox-item>
+        <ox-item>Item 2</ox-item>
+        <ox-item>Item 3</ox-item>
+        <ox-item>Item 4</ox-item>
+        <ox-item>Item 5</ox-item>
+        <ox-item>Item 6</ox-item>
+        <ox-item>Item 7</ox-item>
+      </ox-list>
+
     </ox-dashboard-nav>
+    <!-- Ui View -->
     <ox-dashboard-content></ox-dashboard-content>
-  </ox-dashboard> -->
+  </ox-dashboard>
 
-
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"></script>
   <script src="../src/lib/d3/d3.min.js"></script>
   <script src="../src/lib/c3/c3.js"></script>
   <script src="../src/lib/angular/angular.js"></script>
@@ -35,7 +47,22 @@
   <script src="../src/scripts/main/directives/dashboard.js"></script>
   <script src="../src/scripts/main/directives/toolbar.js"></script>
   <script src="../src/scripts/main/directives/index.js"></script>
+  <script src="../src/scripts/main/directives/list.js"></script>
+  <script src="../src/scripts/main/directives/card.js"></script>
+  <script src="../src/scripts/main/directives/drag.js"></script>
   <script src="../src/scripts/main.js"></script>
   <script src="app.js"></script>
+
+  <script type="text/ng-template" id="content">
+    <ox-chart options="options" pattern="material"></ox-chart>
+    <div class="g-wide--full g-wide--last row">
+      <div class="card-material" draggable>Yoooo</div>
+      <div class="card-material" draggable>Yoooo</div>
+      <div class="card-material" draggable>Yoooo</div>
+      <div id="original"></div>
+    </div>
+
+  </script>
+
 </body>
 </html>

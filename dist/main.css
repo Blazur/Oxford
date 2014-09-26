@@ -13,31 +13,113 @@
 .shadow-5 {
   box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
 }
-.dashboard {
-  position: relative;
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-.dashboard-nav {
-  background: #e7e9fd;
-  position: fixed;
-  width: 20%;
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.shadow-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.shadow-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+}
+.dashboard {
+  width: 100%;
   height: 100%;
 }
+.dashboard-nav {
+  background: rgba(0,23,255,0.29);
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3);
+}
 .dashboard-content {
-  padding-left: 20%;
-}
-.card {
-  padding: 10px;
-  border-radius: 3px;
-  position: relative;
-  background-color: #fff !important;
-}
-.card-material {
-  padding: 10px;
-  border-radius: 3px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background-color: #fff !important;
-  position: relative;
+  margin-left: 20%;
+  height: 100%;
+  overflow: hidden;
 }
 .ox-toolbar {
-  background-color: #add8e6;
+  background-color: rgba(255,6,76,0.48);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  height: 60px;
+}
+.ox-list {
+  list-style: none;
+}
+.ox-item {
+  height: 50px;
+}
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.shadow-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.shadow-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+}
+svg {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin: 10px 10px 10px 10px;
+  border-radius: 5px;
+}
+.chart {
+  max-height: 350px !important;
+  width: 970px;
+}
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.shadow-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.shadow-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+}
+ox-card {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: 150px;
+  height: 75px;
+}
+.card-material {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width: 300px;
+  height: 150px;
+  display: inline-block;
+  margin: 5px;
+}
+#original {
+  width: 300px;
+  height: 150px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.row {
+  margin: 10px;
 }

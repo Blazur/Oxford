@@ -15357,12 +15357,29 @@
   ]);
 }());
 
+;(function(){
+  'use strict';
+
+  angular.module('oxford.directives.card', [])
+
+  .directive('oxCard', function() {
+    return {
+      restrict: 'EAC',
+      replace: true,
+      transclude: true,
+      template: '<div class="card-material" draggable id="ox">' +
+        '<div ng-transclude></div>' +
+      '</div>',
+      link: function(scope, element, attr) {
+      }
+    };
+  });
+}());
 ;(function(c3){
   'use strict';
 
-  angular.module('oxford.directives.chart', [
+  angular.module('oxford.directives.chart', [])
 
-  ])
   .directive('oxChart', ['$timeout', function($timeout) {
 
     //color patterns for chart coloring
@@ -15382,11 +15399,12 @@
         options: '=',
         axis: '='
       },
-      template: '<div style="height: 300px;"></div>',
+      template: '<div draggable class="chart"></div>',
       replace: true,
       link: function(scope, element, attrs) {
         //assign an id to the chart if it doesn't have one
         console.log('height & width', element[0].offsetHeight, element[0].offsetWidth);
+        console.log('element  ', element);
         //available option to show gridlines for chart
         if(attrs.grid === 'true') {
           scope.grid = {
@@ -15426,11 +15444,12 @@
         }
 
         //will be called on click
-        scope.data.onclick = function(d, elem) {
-          console.log(elem.style.fill, ' elem');
-          elem.style.fill = '#ce93d8';
-          console.log(d, ' d');
-        };
+        // scope.data.onclick = function(d, elem) {
+        //   console.log(elem.style.fill, ' elem');
+        //   elem.style.fill = '#ce93d8';
+        //   console.log(d, ' d');
+        // };
+
         //generate c3 chart data
         var chartData = {
           bindto: '#' + element.attr('id'),
@@ -15440,7 +15459,12 @@
           grid: scope.grid,
           subchart: scope.subchart,
           zoom: scope.zoom,
-          color: scope.color
+          color: scope.color,
+          // x: scope.x,
+          size: {
+            height: 300,
+            width: 950
+          }
         };
         //assign a type of line if undefined
         chartData.data.type = attrs.chart? attrs.chart : scope.data.type? scope.data.type : 'line';
@@ -15452,14 +15476,14 @@
           });
         }
         //Reload the chart if the data changes
-        scope.$watch('data', function(data, prevData) {
-          if(chart) {
-            chart.load(data);
-            if(data.columns.length < prevData.columns.length) {
-              chart.unload(['data' + prevData.columns.length]);
-            }
-          }
-        });
+        // scope.$watch('data', function(data, prevData) {
+        //   if(chart) {
+        //     chart.load(data);
+        //     if(data.columns.length < prevData.columns.length) {
+        //       chart.unload(['data' + prevData.columns.length]);
+        //     }
+        //   }
+        // });
         //ran if there are changes to the chart
         var onChartChanged = function(chart) {
           if(chart) {
@@ -15476,18 +15500,108 @@
         var chart = c3.generate(chartData);
 
         //mocking data incoming from a server to test the $watch function
-        $timeout(function() {
-        //   scope.data = {
-        //     columns: [
-        //       ['sample16', 30, 200, 100, 64, 150, 250, 150, 200, 170, 240, 350, 26, 100, 400],
-        //       ['sample2', 150, 250, 150, 200, 170, 240, 230, 150, 250, 150, 200, 170, 240, 30],
-        //       ['sample3', 200, 100, 400, 150, 250, 150, 46, 170, 240, 62, 150, 100, 400, 350],
-        //       ['sample4', 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 198, 143, 24]
-        //     ],
-        //     type: 'spline'
-        //   };
-          chart.transform('spline');
-        }, 5000);
+        setInterval(function() {
+          $timeout(function() {
+            chart.load({
+              rows: [
+                ['data1', 'data2', 'data3'],
+                [20,180,400],
+                [40,150,310],
+                [70,120,470],
+                [50,170,400],
+                [80,200,380]
+              ]
+            });
+          }, 1000);
+          $timeout(function () {
+            chart.load({
+              columns: [
+                ['data1', 130, 120, 150, 140, 160, 150],
+                ['data4', 30, 20, 50, 40, 60, 50],
+              ],
+              unload: ['data2', 'data3'],
+            });
+          }, 2000);
+
+          $timeout(function () {
+            chart.load({
+              rows: [
+                ['data2', 'data3'],
+                [120, 300],
+                [160, 240],
+                [200, 290],
+                [160, 230],
+                [130, 300],
+                [220, 320],
+              ],
+              unload: 'data4',
+            });
+          }, 3000);
+
+          $timeout(function () {
+            chart.load({
+              columns:[
+                ['data4', 30, 20, 50, 40, 60, 50,100,200]
+              ],
+              type: 'bar'
+            });
+          }, 4000);
+
+          $timeout(function () {
+            chart.unload({
+              ids: 'data4'
+            });
+          }, 5000);
+
+          $timeout(function () {
+            chart.load({
+              columns:[
+                ['data2', null, 30, 20, 50, 40, 60, 50]
+              ]
+            });
+          }, 6000);
+
+          $timeout(function () {
+            chart.unload();
+          }, 7000);
+
+          $timeout(function () {
+            chart.load({
+              rows: [
+                ['data4', 'data2', 'data3'],
+                [90, 120, 300],
+                [40, 160, 240],
+                [50, 200, 290],
+                [120, 160, 230],
+                [80, 130, 300],
+                [90, 220, 320],
+              ],
+              type: 'bar'
+            });
+          }, 8000);
+
+          $timeout(function () {
+            chart.load({
+              rows: [
+                ['data5', 'data6'],
+                [190, 420],
+                [140, 460],
+                [150, 500],
+                [220, 460],
+                [180, 430],
+                [190, 520],
+              ],
+              type: 'line'
+            });
+          }, 9000);
+
+          $timeout(function () {
+            chart.unload({
+              ids: ['data2', 'data3']
+            });
+          }, 10000);
+        }, 11000);
+        /////////////////
       }
     };
   }]);
@@ -15515,7 +15629,7 @@
       }
     };
   })
-  .directive('oxDashboardNav', function() {
+  .directive('oxDashboardNav', function($window) {
     return {
       transclude: true,
       replace: true,
@@ -15545,14 +15659,96 @@
 ;(function(){
   'use strict';
 
+  angular.module('oxford.directives.drag', [])
+
+  .directive('draggable', function() {
+    var gridWidth = 200;
+    var gridHeight = 100;
+    var startX, startY;
+    var bounds = document.getElementsByClassName('dashboard-content');
+    return function(scope, element, attr) {
+      if(attr.draggable !== 'false') {
+        Draggable.create(element, {
+          bounds: bounds,
+          type: 'x,y',
+          edgeResistance: 0.90,
+          throwProps: true,
+          onPress: function() {
+            startX = this.x;
+            startY = this.y;
+          },
+          snap: {
+            x: function(endValue) {
+              return Math.round(endValue / gridWidth) * gridWidth;
+            },
+            y: function(endValue) {
+              return Math.round(endValue / gridHeight) * gridHeight;
+            }
+          },
+          onDrag: function(e) {
+            if(this.hitTest(element)) {
+              console.log(this, ' this');
+            }
+          },
+          onDragEnd: function() {
+            if(this.hitTest(element, 20)) {
+              console.log('hit');
+              TweenLite.to(element, 0.5, {x: startX, y: startY, ease: Power2.easeInOut});
+            }
+          }
+        });
+      }
+    };
+  });
+}());
+;(function(){
+  'use strict';
+
   angular.module('oxford.directives', [
     'oxford.directives.chart',
     'oxford.directives.dashboard',
-    'oxford.directives.toolbar'
+    'oxford.directives.toolbar',
+    'oxford.directives.list',
+    'oxford.directives.card',
+    'oxford.directives.drag'
   ]);
 
 }());
 
+;(function() {
+  'use strict';
+
+  angular.module('oxford.directives.list', [
+
+  ])
+  .directive('oxList', function() {
+    return {
+      transclude: true,
+      replace: true,
+      restrict: 'EA',
+      scope: true,
+      template: '<ul class="ox-list">' +
+        '<div ng-transclude></div>' +
+      '</ul>',
+      link: function($scope, $element, $attr, navController) {
+      }
+    };
+  })
+  .directive('oxItem', function() {
+    return {
+      transclude: true,
+      replace: true,
+      restrict: 'EA',
+      scope: true,
+      template: '<li class="ox-item">' +
+        '<div ng-transclude></div>' +
+      '</li>',
+      link: function($scope, $element, $attr, navController) {
+
+      }
+    };
+  });
+}());
 ;(function() {
   'use strict';
 

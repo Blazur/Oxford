@@ -1,13 +1,30 @@
 @import 'app/_colors'
+@import 'app/_shadows'
+
 .dashboard
-  position relative
+  width 100%
+  height 100%
 
 
 .dashboard-nav
   background paleBlue
-  position fixed
+  position absolute
   width 20%
   height 100%
+  box-shadow 0 19px 38px rgba(0,0,0,0.30)
 
 .dashboard-content
-  padding-left 20%
+  margin-left 20%
+  height: 100%
+  overflow: hidden
+
+.ox-toolbar
+  background-color lightRed
+  shadow(2)
+  height 60px
+
+.ox-list
+  list-style none
+
+.ox-item
+  height 50px

@@ -14,6 +14,7 @@
         '<div ng-transclude></div>' +
       '</div>',
       link: function($scope, $element, $attr, navController) {
+
       }
     };
   });

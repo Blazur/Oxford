@@ -4,11 +4,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Oxford Demo</title>
-  <link rel="stylesheet" href="../dist/oxford.css">
-  <link rel="stylesheet" type="text/css" href="../dist/main.css">
+
+  <!-- build:css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../lib/c3/c3.css" />
+    <link rel="stylesheet" href="../lib/toastr/toastr.css" />
+    <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- styles:css -->
+  <link rel="stylesheet" href="/oxford.css">
+  <link rel="stylesheet" href="/main.css">
+  <!-- endinject -->
+
+
 </head>
 <body ng-app="demo">
-
 
   <!-- <div ng-controller="Controller">
 
@@ -39,19 +50,34 @@
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"></script>
-  <script src="../src/lib/d3/d3.min.js"></script>
-  <script src="../src/lib/c3/c3.js"></script>
-  <script src="../src/lib/angular/angular.js"></script>
-  <script src="../src/lib/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="../src/scripts/main/directives/chart.js"></script>
-  <script src="../src/scripts/main/directives/dashboard.js"></script>
-  <script src="../src/scripts/main/directives/toolbar.js"></script>
-  <script src="../src/scripts/main/directives/index.js"></script>
-  <script src="../src/scripts/main/directives/list.js"></script>
-  <script src="../src/scripts/main/directives/card.js"></script>
-  <script src="../src/scripts/main/directives/drag.js"></script>
-  <script src="../src/scripts/main.js"></script>
+
+  <!-- build:js -->
+  <!-- bower:js -->
+  <script src="../lib/jquery/dist/jquery.js"></script>
+  <script src="../lib/angular/angular.js"></script>
+  <script src="../lib/d3/d3.js"></script>
+  <script src="../lib/c3/c3.js"></script>
+  <script src="../lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../lib/toastr/toastr.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- scripts:js -->
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/main/directives/card.js"></script>
+  <script src="/scripts/main/directives/chart.js"></script>
+  <script src="/scripts/main/directives/dashboard.js"></script>
+  <script src="/scripts/main/directives/drag.js"></script>
+  <script src="/scripts/main/directives/index.js"></script>
+  <script src="/scripts/main/directives/list.js"></script>
+  <script src="/scripts/main/directives/toolbar.js"></script>
+  <!-- endinject -->
+
+  <!-- demo:js -->
   <script src="app.js"></script>
+  <script src="controllers/app.controller.js"></script>
+  <script src="services/logger.service.js"></script>
+  <!-- endinject -->
 
   <script type="text/ng-template" id="content">
     <ox-chart options="options" pattern="material"></ox-chart>
@@ -63,6 +89,5 @@
     </div>
 
   </script>
-
 </body>
 </html>

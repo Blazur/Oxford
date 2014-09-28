@@ -44,12 +44,16 @@ body {
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
 }
 .show-dashboard-nav .dashboard {
   -webkit-transform: translateX(250px);
   transform: translateX(250px);
   transform: translate3d(250px, 0, 0);
   -webkit-transform: translate3d(250px, 0, 0);
+  transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
 }
 .dashboard-nav {
   background: rgba(0,23,255,0.29);
@@ -61,8 +65,12 @@ body {
   top: 0;
   left: -250px;
   padding: 15px;
+  transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
 }
 .dashboard-content {
+  transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
   margin-left: 20%;
   height: 100%;
   overflow: hidden;

@@ -20,19 +20,6 @@
       }
     };
   })
-  .directive('oxDashboardNav', function($window) {
-    return {
-      transclude: true,
-      replace: true,
-      restrict: 'EA',
-      require: '^oxDashboard',
-      template: '<div class="dashboard-nav">' +
-        '<div ng-transclude></div>' +
-      '</div>',
-      link: function($scope, $element, $attr, navController) {
-      }
-    };
-  })
   .directive('oxDashboardContent', function() {
     return {
       replace: true,

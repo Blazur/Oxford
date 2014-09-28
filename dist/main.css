@@ -45,9 +45,82 @@
   overflow: hidden;
 }
 .ox-toolbar {
-  background-color: rgba(255,6,76,0.48);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   height: 60px;
+  background-color: color-default;
+}
+.ox-toolbar.light-red {
+  background-color: rgba(255,6,76,0.48);
+}
+.ox-toolbar .ox-toolbar-header {
+  color: #999;
+  float: left;
+  width: 20%;
+  height: 60px;
+  border-right: 1px solid #eee;
+  text-align: center;
+}
+.ox-toolbar .ox-toolbar-header .ox-brand {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+.ox-toolbar .tools {
+  height: 60px;
+}
+.ox-toolbar .tools.tools-left {
+  float: left;
+}
+.ox-toolbar .tools.tools-right {
+  float: right;
+}
+.ox-toolbar .tools .tool {
+  margin: 0;
+  height: 60px;
+  min-width: 70px;
+  font-size: 22px;
+  padding-top: 17px;
+  padding-bottom: 10px;
+  float: left;
+  display: block;
+  text-align: center;
+  background-color: #fff;
+  color: #999;
+}
+.ox-toolbar .tools .tool:hover,
+.ox-toolbar .tools .tool:focus,
+.ox-toolbar .tools .tool.active {
+  background-color: inherit;
+  color: #fff;
+}
+.ox-toolbar .tools .tool.light-red {
+  background-color: rgba(255,6,76,0.48);
+  color: #fff;
+}
+.ox-toolbar .tools .tool.teal {
+  background-color: #31c0be;
+  color: #fff;
+}
+.ox-toolbar .tools .tool.blue {
+  background-color: #66b5d7;
+  color: #fff;
+}
+.ox-toolbar .tools .tool.green {
+  background-color: #60cd9b;
+  color: #fff;
+}
+.ox-toolbar .tools .tool.yellow {
+  background-color: #eec95a;
+  color: #fff;
+}
+.ox-toolbar .tools .tool.orange {
+  background-color: #ef9549;
+  color: #fff;
+}
+.ox-toolbar .tools .tool.red {
+  background-color: #e87352;
+  color: #fff;
 }
 .ox-list {
   list-style: none;

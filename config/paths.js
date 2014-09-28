@@ -8,7 +8,7 @@ module.exports = {
     fonts: './src/fonts/*',
     images: './src/images/**/*',
     lib: ['src/lib/d3/d3.js', 'src/lib/c3/c3.js'],
-    scripts: './src/scripts/**/*.js',
+    scripts: ['./src/scripts/**/*.js', '!./src/scripts/**/*.spec.js'],
     stylus: './src/styles/main.syl',
     css: './src/styles/**/*.css',
     stylesPath: ['./src/styles/**/*.styl', './src/styles/**/*.css']

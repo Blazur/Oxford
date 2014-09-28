@@ -2,7 +2,10 @@
   'use strict';
 
   angular.module('oxford.directives.toolbar', [
-
+    'oxford.directives.toolbar.brand',
+    'oxford.directives.toolbar.header',
+    'oxford.directives.toolbar.tools',
+    'oxford.directives.toolbar.tool'
   ])
   .directive('oxToolbar', function() {
     return {

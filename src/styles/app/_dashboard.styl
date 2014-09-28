@@ -1,102 +1,69 @@
 @import 'app/_colors'
 @import 'app/_shadows'
-
-.dashboard
+body {
+  position relative
+  overflow hidden
   width 100%
   height 100%
+}
+.dashboard
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  // padding: 1% 0; /* Temp: Just spacing. */
+
+.show-dashboard-nav .dashboard
+  -webkit-transform: translateX(250px);
+  transform: translateX(250px);
+
+  transform: translate3d(250px, 0, 0);
+  -webkit-transform: translate3d(250px, 0, 0);
 
 .dashboard-nav
   background paleBlue
   position absolute
-  width 20%
+  width 250px
   height 100%
   box-shadow 0 19px 38px rgba(0,0,0,0.30)
+
+  // width: 220px;
+  // height: 100%;
+  position: absolute;
+  top: 0;
+  left: -250px;
+  padding: 15px;
 
 .dashboard-content
   margin-left 20%
   height: 100%
   overflow: hidden
 
-.ox-toolbar
-  shadow(2)
-  height 60px
-  background-color color-default
-  &.light-red
-    background-color color-lightRed
-
-
-  .ox-toolbar-header
-    color color-gray-light
-    float left
-    // > div.ox-brand > div > span
-    width 20%
-    height 60px
-    border-right 1px solid color-gray-lighter
-    text-align center
-
-    .ox-brand
-      width 100%
-      font-size 30px
-      font-weight bold
-      padding-top 15px
-
-  .tools
-    height:60px
-    &.tools-left
-      float left
-    &.tools-right
-      float right
-    .tool
-      margin 0
-      height 60px
-      min-width 70px
-      font-size 22px
-      padding-top 17px
-      padding-bottom 10px
-      // border-right 1px solid #eee
-      float left
-      display block
-      text-align center
-      background-color #ffffff
-      color color-gray-light
-      &:hover,
-      &:focus,
-      &.active
-        background-color inherit
-        color white
-        // border-right 1px inset border-lightRed
-      &.light-red {
-        background-color color-lightRed
-        color color-white
-      }
-      &.teal {
-        background-color color-teal
-        color color-white
-      }
-      &.blue {
-        background-color color-blue
-        color color-white
-      }
-      &.green {
-        background-color color-green
-        color color-white
-      }
-      &.yellow {
-        background-color color-yellow
-        color color-white
-      }
-      &.orange {
-        background-color color-orange
-        color color-white
-      }
-      &.red {
-        background-color color-red
-        color color-white
-      }
-
 .ox-list
   list-style none
 
 .ox-item
   height 50px
+
+
+
+
+
+.ease { -webkit-transition: 300ms ease all; transition: 300ms ease all; }
+.linear { -webkit-transition: 300ms linear all; transition: 300ms linear all; }
+.ease-in { -webkit-transition: 300ms ease-in all; transition: 300ms ease-in all; }
+.ease-out { -webkit-transition: 300ms ease-out all; transition: 300ms ease-out all; }
+.ease-in-out { -webkit-transition: 300ms ease-out all; transition: 300ms ease-out all; }
+.bounce { -webkit-transition: all 300ms cubic-bezier(0.32,1.25,0.375,1.15); transition: all 300ms cubic-bezier(0.32,1.25,0.375,1.15); }
+.snappy { -webkit-transition: all 300ms cubic-bezier(.694, .0482, .335, 1); transition: all 300ms cubic-bezier(.694, .0482, .335, 1); }
+.out-of-orbit { -webkit-transition: all 300ms cubic-bezier(1,0,.61,.15); transition: all 300ms cubic-bezier(1,0,.61,.15); }
+.fat-kid-down-slide { -webkit-transition: all 300ms cubic-bezier(.2,1,.47,0); transition: all 300ms cubic-bezier(.2,1,.47,0); }
+.none { -webkit-transition: none; -webkit-transition: none; }

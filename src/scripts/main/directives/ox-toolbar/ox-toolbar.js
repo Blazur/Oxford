@@ -2,8 +2,9 @@
   'use strict';
 
   angular.module('oxford.directives.toolbar', [
-    'oxford.directives.toolbar.brand',
     'oxford.directives.toolbar.header',
+    'oxford.directives.toolbar.brand',
+    'oxford.directives.toolbar.toolbox',
     'oxford.directives.toolbar.tools',
     'oxford.directives.toolbar.tool'
   ])

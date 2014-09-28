@@ -1,9 +1,9 @@
 ;(function() {
   'use strict';
   angular
-    .module('oxford.directives.toolbar.tools',[])
-    .directive('oxTools', oxTools);
-    function oxTools() {
+    .module('oxford.directives.toolbar.toolbox',[])
+    .directive('oxToolBox', oxToolBox);
+    function oxToolBox() {
       return {
         transclude: true,
         replace: true,
@@ -11,11 +11,11 @@
         scope: {
           side: '=side'
         },
-        template: '<div class="tools tools-{{side}}">' +
+        template: '<div class="ox-tool-box">' +
           '<div ng-transclude></div>' +
         '</div>',
         link: function($scope, $element, $attr, navController) {
-          $scope.side = $attr.side;
+
         }
       };
     }

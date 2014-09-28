@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Oxford Demo</title>
-
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- build:css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../lib/c3/c3.css" />
@@ -28,7 +28,21 @@
   </div> -->
 
   <!-- Top ToolBar -->
-  <ox-toolbar></ox-toolbar>
+  <ox-toolbar>
+    <ox-toolbar-header>
+      <ox-brand>Brand</ox-brand>
+    </ox-toolbar-header>
+    <ox-tools side="left">
+      <ox-tool color="light-red" icon="user" link="#/home"></ox-tool>
+      <ox-tool color="blue" icon="pencil" link="#/home"></ox-tool>
+      <ox-tool color="green" icon="github" link="#/home"></ox-tool>
+    </ox-tools>
+    <ox-tools side="right">
+      <ox-tool color="yellow" icon="edit" link="#/home"></ox-tool>
+      <ox-tool color="orange" icon="clipboard" link="#/home"></ox-tool>
+      <ox-tool color="red" icon="bar-chart-o" link="#/home"></ox-tool>
+    </ox-tools>
+  </ox-toolbar>
   <ox-dashboard>
     <!-- Side NavBar -->
     <ox-dashboard-nav>
@@ -70,7 +84,11 @@
   <script src="/scripts/main/directives/drag.js"></script>
   <script src="/scripts/main/directives/index.js"></script>
   <script src="/scripts/main/directives/list.js"></script>
-  <script src="/scripts/main/directives/toolbar.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/ox-toolbar.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/ox-brand/ox-brand.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/ox-tool/ox-tool.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/ox-toolbar-header/ox-toolbar-header.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/ox-tools/ox-tools.js"></script>
   <!-- endinject -->
 
   <!-- demo:js -->

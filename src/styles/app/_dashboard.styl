@@ -19,9 +19,81 @@
   overflow: hidden
 
 .ox-toolbar
-  background-color lightRed
   shadow(2)
   height 60px
+  background-color color-default
+  &.light-red
+    background-color color-lightRed
+
+
+  .ox-toolbar-header
+    color color-gray-light
+    float left
+    // > div.ox-brand > div > span
+    width 20%
+    height 60px
+    border-right 1px solid color-gray-lighter
+    text-align center
+
+    .ox-brand
+      width 100%
+      font-size 30px
+      font-weight bold
+      padding-top 15px
+
+  .tools
+    height:60px
+    &.tools-left
+      float left
+    &.tools-right
+      float right
+    .tool
+      margin 0
+      height 60px
+      min-width 70px
+      font-size 22px
+      padding-top 17px
+      padding-bottom 10px
+      // border-right 1px solid #eee
+      float left
+      display block
+      text-align center
+      background-color #ffffff
+      color color-gray-light
+      &:hover,
+      &:focus,
+      &.active
+        background-color inherit
+        color white
+        // border-right 1px inset border-lightRed
+      &.light-red {
+        background-color color-lightRed
+        color color-white
+      }
+      &.teal {
+        background-color color-teal
+        color color-white
+      }
+      &.blue {
+        background-color color-blue
+        color color-white
+      }
+      &.green {
+        background-color color-green
+        color color-white
+      }
+      &.yellow {
+        background-color color-yellow
+        color color-white
+      }
+      &.orange {
+        background-color color-orange
+        color color-white
+      }
+      &.red {
+        background-color color-red
+        color color-white
+      }
 
 .ox-list
   list-style none

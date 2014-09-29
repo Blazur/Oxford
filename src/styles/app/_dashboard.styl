@@ -76,31 +76,49 @@ body {
 
   // width: 220px;
   // height: 100%;
-  position: absolute;
-  top: 0;
-  left: -190px;
-  padding: 15px;
+  position absolute
+  top 0
+  left -200px
+  padding 15px
 
   // Snappy
   -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
   transition all 300ms cubic-bezier(.694, .0482, .335, 1)
 
+  @media(min-width 768px)
+    left -190px
+
 .dashboard-content
 
   position relative
-  width calc(100% - 60px)
+  width calc(100% - 50px)
   padding 10px
   margin 0
-  left 60px
+  left 50px
+  -webkit-transition 200ms ease all
+  transition 200ms ease all
+  // -webkit-transition all 50ms cubic-bezier(.694, .0482, .335, 1)
+  // transition all 50ms cubic-bezier(.694, .0482, .335, 1)
+
+  @media(min-width 768px)
+    left 60px
+    width calc(100% - 60px)
+    -webkit-transition all 300ms ease
+    transition all 300ms ease
+    // -webkit-transition all 50ms cubic-bezier(.694, .0482, .335, 1)
+    // transition all 50ms cubic-bezier(.694, .0482, .335, 1)
 
 
-  // -webkit-transition 400ms ease all
-  // transition 400ms ease all
 
-  -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
-  transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+
 .show-dashboard-nav .dashboard-content
-  width calc(100% - 250px)
+  transition all 300ms ease
+  -webkit-transition all 300ms ease
+
+  width calc(100% - 240px)
+
+  @media(min-width 768px)
+    width calc(100% - 250px)
 
 .ox-list
   list-style none

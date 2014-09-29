@@ -6,9 +6,10 @@
     'oxford.directives.toolbar.brand',
     'oxford.directives.toolbar.toolbox',
     'oxford.directives.toolbar.tools',
-    'oxford.directives.toolbar.tool'
+    'oxford.directives.toolbar.tool',
+    'oxford.directives.toolbar.top'
   ])
-  .directive('oxToolbar', function() {
+  /*.directive('oxToolbar', function() {
     return {
       transclude: true,
       replace: true,
@@ -21,5 +22,5 @@
 
       }
     };
-  });
+  });*/
 }());

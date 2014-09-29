@@ -44,16 +44,51 @@ body {
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+.dashboard.ease {
   transition: 300ms ease all;
   -webkit-transition: 300ms ease all;
 }
+.dashboard.snappy {
+  -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+}
+.dashboard.linear {
+  -webkit-transition: 300ms linear all;
+  transition: 300ms linear all;
+}
+.dashboard.ease-in {
+  -webkit-transition: 300ms ease-in all;
+  transition: 300ms ease-in all;
+}
+.dashboard.ease-out {
+  -webkit-transition: 300ms ease-out all;
+  transition: 300ms ease-out all;
+}
+.dashboard.ease-in-out {
+  -webkit-transition: 300ms ease-out all;
+  transition: 300ms ease-out all;
+}
+.dashboard.bounce {
+  -webkit-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}
+.dashboard.out-of-orbit {
+  -webkit-transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
+  transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
+}
+.dashboard.fat-kid-down-slide {
+  -webkit-transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
+  transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
+}
 .show-dashboard-nav .dashboard {
-  -webkit-transform: translateX(250px);
-  transform: translateX(250px);
-  transform: translate3d(250px, 0, 0);
-  -webkit-transform: translate3d(250px, 0, 0);
-  transition: 300ms ease all;
-  -webkit-transition: 300ms ease all;
+  -webkit-transform: translateX(190px);
+  transform: translateX(190px);
+  transform: translate3d(190px, 0, 0);
+  -webkit-transform: translate3d(190px, 0, 0);
+/*Snappy*/
+  -webkit-transition: all 100ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: all 100ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 }
 .dashboard-nav {
   background: rgba(0,23,255,0.29);
@@ -63,17 +98,22 @@ body {
   box-shadow: 0 19px 38px rgba(0,0,0,0.3);
   position: absolute;
   top: 0;
-  left: -250px;
+  left: -190px;
   padding: 15px;
-  transition: 300ms ease all;
-  -webkit-transition: 300ms ease all;
+  -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 }
 .dashboard-content {
-  transition: 300ms ease all;
-  -webkit-transition: 300ms ease all;
-  margin-left: 20%;
-  height: 100%;
-  overflow: hidden;
+  position: relative;
+  width: calc(100% - 60px);
+  padding: 10px;
+  margin: 0;
+  left: 60px;
+  -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+}
+.show-dashboard-nav .dashboard-content {
+  width: calc(100% - 250px);
 }
 .ox-list {
   list-style: none;
@@ -81,45 +121,12 @@ body {
 .ox-item {
   height: 50px;
 }
-.ease {
-  -webkit-transition: 300ms ease all;
-  transition: 300ms ease all;
-}
-.linear {
-  -webkit-transition: 300ms linear all;
-  transition: 300ms linear all;
-}
-.ease-in {
-  -webkit-transition: 300ms ease-in all;
-  transition: 300ms ease-in all;
-}
-.ease-out {
-  -webkit-transition: 300ms ease-out all;
-  transition: 300ms ease-out all;
-}
-.ease-in-out {
-  -webkit-transition: 300ms ease-out all;
-  transition: 300ms ease-out all;
-}
-.bounce {
-  -webkit-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-}
-.snappy {
+.testblock {
   -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
   transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
-}
-.out-of-orbit {
-  -webkit-transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
-  transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
-}
-.fat-kid-down-slide {
-  -webkit-transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
-  transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
-}
-.none {
-  -webkit-transition: none;
-  -webkit-transition: none;
+  width: 100%;
+  height: 400px;
+  background: #555;
 }
 .shadow-1 {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -184,18 +191,31 @@ ox-card {
 }
 .ox-toolbar {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  height: 100px;
+}
+.ox-toolbar-top,
+.ox-toolbar-bottom {
   background-color: color-default;
+  height: 50px;
 }
 @media (min-width: 768px) {
-  .ox-toolbar {
+  .ox-toolbar-top,
+  .ox-toolbar-bottom {
     height: 60px;
   }
 }
-.ox-toolbar.light-red {
+.ox-toolbar-top.light-red,
+.ox-toolbar-bottom.light-red {
   background-color: rgba(255,6,76,0.48);
 }
-.ox-toolbar .ox-toolbar-header {
+.ox-toolbar-has-title {
+  height: 100px;
+}
+@media (min-width: 768px) {
+  .ox-toolbar-has-title {
+    height: 60px;
+  }
+}
+.ox-toolbar-top .ox-toolbar-header {
   color: #999;
   width: 100%;
   height: 50px;
@@ -203,51 +223,51 @@ ox-card {
   text-align: center;
 }
 @media (min-width: 768px) {
-  .ox-toolbar .ox-toolbar-header {
+  .ox-toolbar-top .ox-toolbar-header {
     width: 250px;
     height: 60px;
     float: left;
   }
 }
-.ox-toolbar .ox-toolbar-header .ox-brand {
+.ox-toolbar-top .ox-toolbar-header .ox-brand {
   width: 100%;
   font-size: 30px;
   font-weight: bold;
   padding-top: 15px;
 }
-.ox-toolbar .ox-tool-box {
+.ox-toolbar-top .ox-tool-box {
   width: 100%;
   z-index: 1000;
 }
 @media (min-width: 768px) {
-  .ox-toolbar .ox-tool-box {
+  .ox-toolbar-top .ox-tool-box {
     float: left;
     width: calc(100% - 250px);
   }
 }
-.ox-toolbar .ox-tool-box .tools {
+.ox-toolbar-top .tools {
   min-width: 10%;
   height: 50px;
   background-color: #fff;
 }
 @media (min-width: 768px) {
-  .ox-toolbar .ox-tool-box .tools {
+  .ox-toolbar-top .tools {
     height: 60px;
   }
 }
-.ox-toolbar .ox-tool-box .tools.tools-left {
+.ox-toolbar-top .tools.tools-left {
   float: left;
 }
-.ox-toolbar .ox-tool-box .tools.tools-left .tool {
+.ox-toolbar-top .tools.tools-left .tool {
   float: left;
 }
-.ox-toolbar .ox-tool-box .tools.tools-right {
+.ox-toolbar-top .tools.tools-right {
   float: right;
 }
-.ox-toolbar .ox-tool-box .tools.tools-right .tool {
+.ox-toolbar-top .tools.tools-right .tool {
   float: right;
 }
-.ox-toolbar .ox-tool-box .tools .tool {
+.tool {
   margin: 0;
   height: 50px;
   min-width: 50px;
@@ -259,47 +279,51 @@ ox-card {
   color: #999;
 }
 @media (min-width: 768px) {
-  .ox-toolbar .ox-tool-box .tools .tool {
+  .tool {
     height: 60px;
-    min-width: 70px;
+    min-width: 60px;
     font-size: 22px;
     padding-top: 17px;
     padding-bottom: 10px;
   }
 }
-.ox-toolbar .ox-tool-box .tools .tool:hover,
-.ox-toolbar .ox-tool-box .tools .tool:focus,
-.ox-toolbar .ox-tool-box .tools .tool.active {
+.tool:hover,
+.tool:focus,
+.tool.active {
   background-color: inherit;
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.light-red {
+.tool.light-red {
   background-color: rgba(255,6,76,0.48);
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.teal {
+.tool.teal {
   background-color: #31c0be;
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.blue {
+.tool.blue {
   background-color: #66b5d7;
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.green {
+.tool.green {
   background-color: #60cd9b;
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.yellow {
+.tool.yellow {
   background-color: #eec95a;
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.orange {
+.tool.orange {
   background-color: #ef9549;
   color: #fff;
 }
-.ox-toolbar .ox-tool-box .tools .tool.red {
+.tool.red {
   background-color: #e87352;
   color: #fff;
+}
+.tool.default {
+  background-color: #fff;
+  color: #555;
 }
 body {
   margin: 0px;

@@ -4,11 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Oxford Demo</title>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- build:css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../lib/c3/c3.css" />
     <link rel="stylesheet" href="../lib/toastr/toastr.css" />
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
   <!-- endbuild -->
 
@@ -19,7 +19,7 @@
 
 
 </head>
-<body ng-app="demo" class="show-dashboard-nav">
+<body ng-app="demo" class="how-dashboard-nav ease">
 
   <!-- <div ng-controller="Controller">
 
@@ -28,23 +28,18 @@
   </div> -->
 
   <!-- Top ToolBar -->
-  <ox-toolbar>
-    <ox-toolbar-header>
-      <ox-brand>Brand</ox-brand>
-    </ox-toolbar-header>
-    <ox-tool-box>
-      <ox-tools side="left">
-        <ox-tool color="default" icon="bars" ox-dashboard-nav-toggle></ox-tool>
-        <ox-tool color="blue" icon="pencil" link="#/home"></ox-tool>
-        <ox-tool color="green" icon="github" link="#/home"></ox-tool>
-        <ox-tool color="yellow" icon="edit" link="#/home"></ox-tool>
-        <ox-tool color="orange" icon="clipboard" link="#/home"></ox-tool>
-        <ox-tool color="red" icon="bar-chart-o" link="#/home"></ox-tool>
-      </ox-tools>
-      <ox-tools side="right">
-      </ox-tools>
-    </ox-tool-box>
-  </ox-toolbar>
+  <ox-toolbar-top title="Oxford">
+    <ox-tools side="left">
+      <ox-tool color="default" icon="bars" ox-dashboard-nav-toggle></ox-tool>
+      <ox-tool color="blue" icon="pencil" link="#/home"></ox-tool>
+      <ox-tool color="green" icon="github" link="#/home"></ox-tool>
+    </ox-tools>
+    <ox-tools side="right">
+      <ox-tool color="yellow" icon="edit" link="#/home"></ox-tool>
+      <ox-tool color="orange" icon="clipboard" link="#/home"></ox-tool>
+      <ox-tool color="red" icon="bar-chart-o" link="#/home"></ox-tool>
+    </ox-tools>
+  </ox-toolbar-top>
 
 
 
@@ -67,19 +62,21 @@
     <ox-dashboard-content></ox-dashboard-content>
   </ox-dashboard>
 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"></script>
+  <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script> -->
+  <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"></script> -->
 
   <!-- build:js -->
   <!-- bower:js -->
   <script src="../lib/jquery/dist/jquery.js"></script>
-  <script src="../lib/angular/angular.js"></script>
+  <script src="../lib/gsap/src/uncompressed/TweenMax.js"></script>
   <script src="../lib/d3/d3.js"></script>
   <script src="../lib/c3/c3.js"></script>
-  <script src="../lib/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="../lib/toastr/toastr.js"></script>
+  <script src="../lib/angular/angular.js"></script>
+  <script src="../lib/angular-ui-router/release/angular-ui-router.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
+  <script src="/lib/gsap/src/minified/utils/Draggable.min.js"></script>
 
   <!-- scripts:js -->
   <script src="/scripts/main.js"></script>
@@ -92,11 +89,12 @@
   <script src="/scripts/main/directives/ox-dashboard-nav/ox-dashboard-nav.js"></script>
   <script src="/scripts/main/directives/ox-toolbar/ox-toolbar.js"></script>
   <script src="/scripts/main/directives/ox-dashboard-nav/ox-dashboard-nav-toggle/ox-dashboard-nav-toggle.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-tool/ox-tool.js"></script>
   <script src="/scripts/main/directives/ox-toolbar/ox-brand/ox-brand.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/ox-tool/ox-tool.js"></script>
   <script src="/scripts/main/directives/ox-toolbar/ox-tool-box/ox-tool-box.js"></script>
   <script src="/scripts/main/directives/ox-toolbar/ox-toolbar-header/ox-toolbar-header.js"></script>
   <script src="/scripts/main/directives/ox-toolbar/ox-tools/ox-tools.js"></script>
+  <script src="/scripts/main/directives/ox-toolbar/top/ox-toolbar-top.js"></script>
   <!-- endinject -->
 
   <!-- demo:js -->
@@ -105,6 +103,7 @@
   <script src="services/logger.service.js"></script>
   <!-- endinject -->
 
+  <!-- <div class="testblock"></div> -->
   <script type="text/ng-template" id="content">
     <ox-chart options="options" pattern="material"></ox-chart>
     <div class="g-wide--full g-wide--last row">

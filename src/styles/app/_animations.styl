@@ -1,0 +1,64 @@
+
+animate-toggleTools(value = 0, mobile = true, right = false)
+  if value is 0
+    if mobile
+      width 40px
+      if right is false
+        text-align center
+        padding-left 0
+      else if right
+        text-align center
+        padding-right 0
+
+    else
+      width 60px
+      if right is false
+        padding-left 0
+      else if right
+        padding-right 0
+
+
+  else if value = 100
+    width 100%
+    if right is false
+      padding-left 20px
+      text-align left
+    else if right
+      padding-right 20px
+      text-align right
+
+
+animate-toggle-content-left(value = 0)
+  if value is 0
+    width 100%
+    -webkit-transform translateX(0)
+    transform translateX(0)
+    -webkit-transform translate3d(0, 0, 0)
+    transform translate3d(0, 0, 0)
+    // left 250px
+
+  else if value is 100
+    width calc(100% - 50px)
+    -webkit-transform translateX(200px)
+    transform translateX(200px)
+    -webkit-transform translate3d(200px, 0, 0)
+    transform translate3d(200px, 0, 0)
+
+animate-toggle-view-left(value = 0)
+  if value is 0
+    width 100%
+  else if value is 100
+    width calc(100% - 200px)
+
+animate-toggle-toolbar-left(value = 0)
+  if value is 0
+    width 60px
+  else if value is 100
+    width 250px
+
+
+// @keyframes ox-toggle-view-left-back
+//   0%
+//     width calc(100% - 250px)
+//   100%
+//     width 100%

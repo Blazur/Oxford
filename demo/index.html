@@ -45,29 +45,27 @@
         <ox-tool color="red" icon="bar-chart-o" link="#/home"></ox-tool>
       </ox-tools>
     </ox-toolbar-top>
-
-    <ox-dashboard-content>
-      <!-- Side NavBar -->
-      <ox-toolbar-left color="dark">
-        <ox-tools>
-          <ox-tool color="yellow" icon="edit" link="#/home" title="Home"></ox-tool>
-          <ox-tool color="orange" icon="user" link="#/home" title="Users"></ox-tool>
-          <ox-tool color="red" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
-        </ox-tools>
-      </ox-toolbar-left>
+    <!-- Side NavBar -->
+    <ox-toolbar-left color="dark">
+      <ox-tools>
+        <ox-tool color="yellow" icon="edit" link="#/home" title="Home"></ox-tool>
+        <ox-tool color="orange" icon="user" link="#/home" title="Users"></ox-tool>
+        <ox-tool color="red" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
+      </ox-tools>
+    </ox-toolbar-left>
 
       <!-- Ui View -->
-      <ox-dashboard-view></ox-dashboard-view>
-
-     <!--  <ox-toolbar-right>
-        <ox-tools>
-          <ox-tool color="yellow" icon="edit" link="#/home" title="Home"></ox-tool>
-          <ox-tool color="orange" icon="user" link="#/home" title="Users"></ox-tool>
-          <ox-tool color="red" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
-          <ox-tool color="default" icon="bars" ox-toggle-toolbar-right></ox-tool>
-        </ox-tools>
-      </ox-toolbar-right> -->
+    <ox-dashboard-content>
     </ox-dashboard-content>
+
+    <ox-toolbar-right color="default">
+      <ox-tools>
+        <ox-tool color="yellow" icon="edit" link="#/home" title="Home"></ox-tool>
+        <ox-tool color="orange" icon="user" link="#/home" title="Users"></ox-tool>
+        <ox-tool color="red" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
+        <ox-tool color="default" icon="bars" ox-toggle-toolbar-right></ox-tool>
+      </ox-tools>
+    </ox-toolbar-right>
   </ox-dashboard>
 
   <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script> -->
@@ -122,14 +120,14 @@
       <!-- <a href="javascript:void(0)" class="btn btn-primary">Default</a> -->
   <script type="text/ng-template" id="content">
     <div class="testblock">
-      <ox-chart options="options" pattern="material"></ox-chart>
-      <div class="g-wide--full g-wide--last row">
-        <div class="card-material" draggable>Yoooo</div>
-        <div class="card-material" draggable>Yoooo</div>
-        <div class="card-material" draggable>Yoooo</div>
-      </div>
     </div>
   </script>
+      <!-- <ox-chart options="options" pattern="material"></ox-chart>
+      <div class="g-wide-\-full g-wide-\-last row">
+        <div class="card-material" draggable>Yoooo</div>
+        <div class="card-material" draggable>Yoooo</div>
+        <div class="card-material" draggable>Yoooo</div>
+      </div> -->
   <!-- <script type="text/ng-template" id="content">
       <div id="original"></div>
   </script> -->

@@ -27,7 +27,7 @@
       restrict: 'EA',
       scope: true,
       template:'<div class="dashboard-content">' +
-                '<div ng-transclude></div>' +
+                '<ox-dashboard-view></ox-dashboard-view>' +
               '</div>',
       controller: function($scope) {
 

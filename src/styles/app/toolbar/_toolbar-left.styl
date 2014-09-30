@@ -1,0 +1,58 @@
+.ox-toolbar
+  &.ox-toolbar-left
+    position absolute
+    width 250px
+    height 100%
+    shadow(3)
+
+    // width: 220px;
+    // height: 100%;
+    position absolute
+    top 0
+    left -200px
+    // padding 15px
+
+    // Snappy
+    // -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+    // transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+
+    .tool
+      // float right
+      position relative
+      margin-left 200px
+      width 40px
+
+      @media(min-width 768px)
+        width 60px
+        margin-left 190px
+
+    @media(min-width 768px)
+      // left -190px
+      width 250px
+      left -190px
+
+
+
+
+.show-toolbar-left
+
+  .ox-toolbar-left
+    width 250px
+    left -190px
+    // -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+    // transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+
+    .tool
+      // background-color none
+      width 100%
+      padding-left 20px
+      text-align left
+      margin 0
+
+      .ox-icon
+        font-size 18px
+      .title
+        opacity 1
+        margin-right 10px
+        float right
+

@@ -5,11 +5,19 @@ body {
   overflow hidden
   width 100%
   height 100%
+  background-color color-gray-lighter
 }
 .dashboard
   width: 100%;
   height: 100%;
   position: relative;
+
+  // padding: 1% 0; /* Temp: Just spacing. */
+
+.dashboard-content
+  width: 100%;
+  height: 100%;
+  position: absolute;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 
@@ -19,106 +27,105 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 
-  &.ease
-    transition 300ms ease all
-    -webkit-transition 300ms ease all
-
-  &.snappy
-    -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
-    transition all 300ms cubic-bezier(.694, .0482, .335, 1)
-
-  &.linear
-    -webkit-transition 300ms linear all
-    transition: 300ms linear all
-  &.ease-in
-    -webkit-transition 300ms ease-in all
-    transition: 300ms ease-in all
-  &.ease-out
-    -webkit-transition 300ms ease-out all
-    transition 300ms ease-out all
-
-  &.ease-in-out
-    -webkit-transition 300ms ease-out all
-    transition 300ms ease-out all
-
-  &.bounce
-    -webkit-transition all 300ms cubic-bezier(0.32,1.25,0.375,1.15)
-    transition all 300ms cubic-bezier(0.32,1.25,0.375,1.15)
-
-  &.out-of-orbit
-    -webkit-transition all 300ms cubic-bezier(1,0,.61,.15)
-    transition all 300ms cubic-bezier(1,0,.61,.15)
-
-  &.fat-kid-down-slide
-    -webkit-transition all 300ms cubic-bezier(.2,1,.47,0)
-    transition all 300ms cubic-bezier(.2,1,.47,0)
-
-
-  // padding: 1% 0; /* Temp: Just spacing. */
-
-.show-dashboard-nav .dashboard
-  -webkit-transform: translateX(190px);
-  transform: translateX(190px);
-
-  transform: translate3d(190px, 0, 0);
-  -webkit-transform: translate3d(190px, 0, 0);
-
   /*Snappy*/
-  -webkit-transition all 100ms cubic-bezier(.694, .0482, .335, 1)
-  transition all 100ms cubic-bezier(.694, .0482, .335, 1)
+  -webkit-transition all 400ms ease
+  transition all 400ms ease
+  // -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+  // transition all 300ms cubic-bezier(.694, .0482, .335, 1)
 
-.dashboard-nav
-  background paleBlue
+.dashboard-view
+
+  overflow scroll
   position absolute
-  width 250px
+  width 100%
   height 100%
-  box-shadow 0 19px 38px rgba(0,0,0,0.30)
-
-  // width: 220px;
-  // height: 100%;
-  position absolute
-  top 0
-  left -200px
-  padding 15px
-
-  // Snappy
-  -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
-  transition all 300ms cubic-bezier(.694, .0482, .335, 1)
-
-  @media(min-width 768px)
-    left -190px
-
-.dashboard-content
-
-  position relative
-  width calc(100% - 50px)
-  padding 10px
+  padding 20px
   margin 0
-  left 50px
-  -webkit-transition 200ms ease all
-  transition 200ms ease all
-  // -webkit-transition all 50ms cubic-bezier(.694, .0482, .335, 1)
-  // transition all 50ms cubic-bezier(.694, .0482, .335, 1)
+  // left 0
+  // -webkit-transition all 400ms ease
+  // transition all 400ms ease
 
   @media(min-width 768px)
-    left 60px
-    width calc(100% - 60px)
-    -webkit-transition all 300ms ease
-    transition all 300ms ease
-    // -webkit-transition all 50ms cubic-bezier(.694, .0482, .335, 1)
-    // transition all 50ms cubic-bezier(.694, .0482, .335, 1)
+    // left 0
+    width 100%
 
+.has-ox-toolbar-left
 
+  .dashboard-view
+    width calc(100% - 50px)
+    left 50px
 
+    @media(min-width 768px)
+      width calc(100% - 60px)
+      left 60px
 
-.show-dashboard-nav .dashboard-content
-  transition all 300ms ease
-  -webkit-transition all 300ms ease
+.has-ox-toolbar-right
 
-  width calc(100% - 240px)
+  .dashboard-view
+    width calc(100% - 50px)
+    // right 50px
 
-  @media(min-width 768px)
+    @media(min-width 768px)
+      width calc(100% - 60px)
+      // right 60px
+
+.show-toolbar-left
+
+  .dashboard-content
+    -webkit-transform: translateX(190px);
+    transform: translateX(190px);
+    transform: translate3d(190px, 0, 0);
+    -webkit-transform: translate3d(190px, 0, 0);
+
+  .dashboard-view
     width calc(100% - 250px)
+    left 60px
+
+    @media(min-width 768px)
+      width calc(100% - 250px)
+
+.show-toolbar-right
+
+  .dashboard-content
+    -webkit-transform: translateX(-190px);
+    transform: translateX(-190px);
+    transform: translate3d(-190px, 0, 0);
+    -webkit-transform: translate3d(-190px, 0, 0);
+
+  .dashboard-view
+    width calc(100% - 250px)
+    left 190px
+
+    @media(min-width 768px)
+      // width calc(100% - 250px)
+
+      // left 190px
+
+.has-ox-toolbar-right.has-ox-toolbar-left
+
+  .dashboard-view
+    width calc(100% - 100px)
+    // left 50px
+
+    @media(min-width 768px)
+      width calc(100% - 120px)
+      // left 60px
+.show-toolbar-left.has-ox-toolbar-right
+
+  .ox-toolbar-right
+    right 0px
+
+  .dashboard-view
+    width calc(100% - 310px)
+
+.show-toolbar-right.has-ox-toolbar-left
+
+  .ox-toolbar-left
+    left 0px
+
+  .dashboard-view
+    width calc(100% - 310px)
+    left 250px
 
 .ox-list
   list-style none
@@ -128,12 +135,37 @@ body {
 
 
 .testblock
-  -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
-  transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+  -webkit-transition all 1s cubic-bezier(.694, .0482, .335, 1)
+  transition all 1s cubic-bezier(.694, .0482, .335, 1)
   width 100%
-  height 400px
-  background color-gray
+  height 500px
+  background color-white
+  shadow(2)
 
-
-
-
+.ease
+ transition 300ms ease all
+ -webkit-transition 300ms ease all
+.snappy
+ -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+ transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+.linear
+ -webkit-transition 300ms linear all
+ transition: 300ms linear all
+.ease-in
+ -webkit-transition 300ms ease-in all
+ transition: 300ms ease-in all
+.ease-out
+ -webkit-transition 300ms ease-out all
+ transition 300ms ease-out all
+.ease-in-out
+ -webkit-transition 300ms ease-out all
+ transition 300ms ease-out all
+.bounce
+ -webkit-transition all 300ms cubic-bezier(0.32,1.25,0.375,1.15)
+ transition all 300ms cubic-bezier(0.32,1.25,0.375,1.15)
+.out-of-orbit
+ -webkit-transition all 300ms cubic-bezier(1,0,.61,.15)
+ transition all 300ms cubic-bezier(1,0,.61,.15)
+.fat-kid-down-slide
+ -webkit-transition all 300ms cubic-bezier(.2,1,.47,0)
+ transition all 300ms cubic-bezier(.2,1,.47,0)

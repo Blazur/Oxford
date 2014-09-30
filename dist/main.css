@@ -33,107 +33,103 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  background-color: #eee;
 }
 .dashboard {
   width: 100%;
   height: 100%;
   position: relative;
+}
+.dashboard-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+/*Snappy*/
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
 }
-.dashboard.ease {
-  transition: 300ms ease all;
-  -webkit-transition: 300ms ease all;
+.dashboard-view {
+  overflow: scroll;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  margin: 0;
 }
-.dashboard.snappy {
-  -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
-  transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+@media (min-width: 768px) {
+  .dashboard-view {
+    width: 100%;
+  }
 }
-.dashboard.linear {
-  -webkit-transition: 300ms linear all;
-  transition: 300ms linear all;
+.has-ox-toolbar-left .dashboard-view {
+  width: calc(100% - 50px);
+  left: 50px;
 }
-.dashboard.ease-in {
-  -webkit-transition: 300ms ease-in all;
-  transition: 300ms ease-in all;
+@media (min-width: 768px) {
+  .has-ox-toolbar-left .dashboard-view {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
 }
-.dashboard.ease-out {
-  -webkit-transition: 300ms ease-out all;
-  transition: 300ms ease-out all;
+.has-ox-toolbar-right .dashboard-view {
+  width: calc(100% - 50px);
 }
-.dashboard.ease-in-out {
-  -webkit-transition: 300ms ease-out all;
-  transition: 300ms ease-out all;
+@media (min-width: 768px) {
+  .has-ox-toolbar-right .dashboard-view {
+    width: calc(100% - 60px);
+  }
 }
-.dashboard.bounce {
-  -webkit-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-}
-.dashboard.out-of-orbit {
-  -webkit-transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
-  transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
-}
-.dashboard.fat-kid-down-slide {
-  -webkit-transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
-  transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
-}
-.show-dashboard-nav .dashboard {
+.show-toolbar-left .dashboard-content {
   -webkit-transform: translateX(190px);
   transform: translateX(190px);
   transform: translate3d(190px, 0, 0);
   -webkit-transform: translate3d(190px, 0, 0);
-/*Snappy*/
-  -webkit-transition: all 100ms cubic-bezier(0.694, 0.0482, 0.335, 1);
-  transition: all 100ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 }
-.dashboard-nav {
-  background: rgba(0,23,255,0.29);
-  position: absolute;
-  width: 250px;
-  height: 100%;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.3);
-  position: absolute;
-  top: 0;
-  left: -200px;
-  padding: 15px;
-  -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
-  transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+.show-toolbar-left .dashboard-view {
+  width: calc(100% - 250px);
+  left: 60px;
 }
 @media (min-width: 768px) {
-  .dashboard-nav {
-    left: -190px;
-  }
-}
-.dashboard-content {
-  position: relative;
-  width: calc(100% - 50px);
-  padding: 10px;
-  margin: 0;
-  left: 50px;
-  -webkit-transition: 200ms ease all;
-  transition: 200ms ease all;
-}
-@media (min-width: 768px) {
-  .dashboard-content {
-    left: 60px;
-    width: calc(100% - 60px);
-    -webkit-transition: all 300ms ease;
-    transition: all 300ms ease;
-  }
-}
-.show-dashboard-nav .dashboard-content {
-  transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
-  width: calc(100% - 240px);
-}
-@media (min-width: 768px) {
-  .show-dashboard-nav .dashboard-content {
+  .show-toolbar-left .dashboard-view {
     width: calc(100% - 250px);
   }
+}
+.show-toolbar-right .dashboard-content {
+  -webkit-transform: translateX(-190px);
+  transform: translateX(-190px);
+  transform: translate3d(-190px, 0, 0);
+  -webkit-transform: translate3d(-190px, 0, 0);
+}
+.show-toolbar-right .dashboard-view {
+  width: calc(100% - 250px);
+  left: 190px;
+}
+.has-ox-toolbar-right.has-ox-toolbar-left .dashboard-view {
+  width: calc(100% - 100px);
+}
+@media (min-width: 768px) {
+  .has-ox-toolbar-right.has-ox-toolbar-left .dashboard-view {
+    width: calc(100% - 120px);
+  }
+}
+.show-toolbar-left.has-ox-toolbar-right .ox-toolbar-right {
+  right: 0px;
+}
+.show-toolbar-left.has-ox-toolbar-right .dashboard-view {
+  width: calc(100% - 310px);
+}
+.show-toolbar-right.has-ox-toolbar-left .ox-toolbar-left {
+  left: 0px;
+}
+.show-toolbar-right.has-ox-toolbar-left .dashboard-view {
+  width: calc(100% - 310px);
+  left: 250px;
 }
 .ox-list {
   list-style: none;
@@ -142,11 +138,48 @@ body {
   height: 50px;
 }
 .testblock {
+  -webkit-transition: all 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: all 1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  width: 100%;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.ease {
+  transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
+}
+.snappy {
   -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
   transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
-  width: 100%;
-  height: 400px;
-  background: #555;
+}
+.linear {
+  -webkit-transition: 300ms linear all;
+  transition: 300ms linear all;
+}
+.ease-in {
+  -webkit-transition: 300ms ease-in all;
+  transition: 300ms ease-in all;
+}
+.ease-out {
+  -webkit-transition: 300ms ease-out all;
+  transition: 300ms ease-out all;
+}
+.ease-in-out {
+  -webkit-transition: 300ms ease-out all;
+  transition: 300ms ease-out all;
+}
+.bounce {
+  -webkit-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}
+.out-of-orbit {
+  -webkit-transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
+  transition: all 300ms cubic-bezier(1, 0, 0.61, 0.15);
+}
+.fat-kid-down-slide {
+  -webkit-transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
+  transition: all 300ms cubic-bezier(0.2, 1, 0.47, 0);
 }
 .shadow-1 {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -212,80 +245,28 @@ ox-card {
 .ox-toolbar {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.ox-toolbar-top,
-.ox-toolbar-bottom {
+.ox-toolbar.ox-toolbar-top,
+.ox-toolbar.ox-toolbar-bottom {
   background-color: color-default;
   height: 50px;
 }
 @media (min-width: 768px) {
-  .ox-toolbar-top,
-  .ox-toolbar-bottom {
+  .ox-toolbar.ox-toolbar-top,
+  .ox-toolbar.ox-toolbar-bottom {
     height: 60px;
   }
 }
-.ox-toolbar-top.light-red,
-.ox-toolbar-bottom.light-red {
+.ox-toolbar.light-red {
   background-color: rgba(255,6,76,0.48);
 }
-.ox-toolbar-has-title {
-  height: 100px;
-}
-@media (min-width: 768px) {
-  .ox-toolbar-has-title {
-    height: 60px;
-  }
-}
-.ox-toolbar-top .ox-toolbar-header {
-  color: #999;
-  width: 100%;
-  height: 50px;
-  border-right: 1px solid #eee;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .ox-toolbar-top .ox-toolbar-header {
-    width: 250px;
-    height: 60px;
-    float: left;
-  }
-}
-.ox-toolbar-top .ox-toolbar-header .ox-brand {
-  width: 100%;
-  font-size: 30px;
-  font-weight: bold;
-  padding-top: 15px;
-}
-.ox-toolbar-top .ox-tool-box {
-  width: 100%;
-  z-index: 1000;
-}
-@media (min-width: 768px) {
-  .ox-toolbar-top .ox-tool-box {
-    float: left;
-    width: calc(100% - 250px);
-  }
-}
-.ox-toolbar-top .tools {
-  min-width: 10%;
-  height: 50px;
+.ox-toolbar.default {
   background-color: #fff;
 }
-@media (min-width: 768px) {
-  .ox-toolbar-top .tools {
-    height: 60px;
-  }
+.ox-toolbar.dark {
+  background-color: #333;
 }
-.ox-toolbar-top .tools.tools-left {
-  float: left;
-}
-.ox-toolbar-top .tools.tools-left .tool {
-  float: left;
-}
-.ox-toolbar-top .tools.tools-right {
-  float: right;
-}
-.ox-toolbar-top .tools.tools-right .tool {
-  float: right;
+.ox-toolbar.light {
+  background-color: #999;
 }
 .tool {
   margin: 0;
@@ -297,6 +278,16 @@ ox-card {
   text-align: center;
   background-color: #fff;
   color: #999;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+}
+.tool .ox-icon {
+  font-size: 25px;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+}
+.tool .title {
+  opacity: 0;
 }
 @media (min-width: 768px) {
   .tool {
@@ -344,6 +335,163 @@ ox-card {
 .tool.default {
   background-color: #fff;
   color: #555;
+}
+.has-ox-toolbar-left .ox-toolbar .tool .title,
+.has-ox-toolbar-right .ox-toolbar .tool .title {
+  transition: all 10ms ease;
+  -webkit-transition: all 10ms ease;
+}
+.show-toolbar-left .ox-toolbar .tool .title,
+.show-toolbar-right .ox-toolbar .tool .title {
+  transition: all 1000ms ease;
+  -webkit-transition: all 1000ms ease;
+}
+.ox-toolbar.ox-toolbar-top.ox-toolbar-has-title {
+  height: 100px;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-top.ox-toolbar-has-title {
+    height: 60px;
+  }
+}
+.ox-toolbar.ox-toolbar-top .ox-toolbar-header {
+  color: #999;
+  width: 100%;
+  height: 50px;
+  border-right: 1px solid #eee;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-top .ox-toolbar-header {
+    width: 250px;
+    height: 60px;
+    float: left;
+  }
+}
+.ox-toolbar.ox-toolbar-top .ox-toolbar-header .ox-brand {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+.ox-toolbar.ox-toolbar-top .ox-tool-box {
+  width: 100%;
+  z-index: 1000;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-top .ox-tool-box {
+    float: left;
+    width: calc(100% - 250px);
+  }
+}
+.ox-toolbar.ox-toolbar-top .tools {
+  min-width: 10%;
+  height: 50px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-top .tools {
+    height: 60px;
+  }
+}
+.ox-toolbar.ox-toolbar-top .tools.tools-left {
+  float: left;
+}
+.ox-toolbar.ox-toolbar-top .tools.tools-left .tool {
+  float: left;
+}
+.ox-toolbar.ox-toolbar-top .tools.tools-right {
+  float: right;
+}
+.ox-toolbar.ox-toolbar-top .tools.tools-right .tool {
+  float: right;
+}
+.ox-toolbar.ox-toolbar-left {
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  position: absolute;
+  top: 0;
+  left: -200px;
+}
+.ox-toolbar.ox-toolbar-left .tool {
+  position: relative;
+  margin-left: 200px;
+  width: 40px;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-left .tool {
+    width: 60px;
+    margin-left: 190px;
+  }
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-left {
+    width: 250px;
+    left: -190px;
+  }
+}
+.show-toolbar-left .ox-toolbar-left {
+  width: 250px;
+  left: -190px;
+}
+.show-toolbar-left .ox-toolbar-left .tool {
+  width: 100%;
+  padding-left: 20px;
+  text-align: left;
+  margin: 0;
+}
+.show-toolbar-left .ox-toolbar-left .tool .ox-icon {
+  font-size: 18px;
+}
+.show-toolbar-left .ox-toolbar-left .tool .title {
+  opacity: 1;
+  margin-right: 10px;
+  float: right;
+}
+.ox-toolbar.ox-toolbar-right {
+  background: rgba(0,23,255,0.29);
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  right: -200px;
+}
+.ox-toolbar.ox-toolbar-right .tool {
+  position: relative;
+  margin-right: 200px;
+  width: 40px;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-right .tool {
+    width: 60px;
+    margin-right: 190px;
+  }
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-right {
+    width: 250px;
+    right: -190px;
+  }
+}
+.show-toolbar-right .ox-toolbar-right {
+  width: 250px;
+  right: -190px;
+}
+.show-toolbar-right .ox-toolbar-right .tool {
+  width: 100%;
+  padding-left: 20px;
+  text-align: left;
+  margin: 0;
+}
+.show-toolbar-right .ox-toolbar-right .tool .title {
+  opacity: 1;
+  margin-right: 10px;
+  float: right;
+  display: block;
 }
 body {
   margin: 0px;

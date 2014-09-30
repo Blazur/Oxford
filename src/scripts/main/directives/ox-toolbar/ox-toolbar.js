@@ -7,20 +7,10 @@
     'oxford.directives.toolbar.toolbox',
     'oxford.directives.toolbar.tools',
     'oxford.directives.toolbar.tool',
-    'oxford.directives.toolbar.top'
+    'oxford.directives.toolbar.top',
+    'oxford.directives.toolbar.left',
+    'oxford.directives.toolbar.left.toggle',
+    'oxford.directives.toolbar.right',
+    'oxford.directives.toolbar.right.toggle',
   ])
-  /*.directive('oxToolbar', function() {
-    return {
-      transclude: true,
-      replace: true,
-      restrict: 'EA',
-      scope: true,
-      template: '<div class="ox-toolbar">' +
-        '<div ng-transclude></div>' +
-      '</div>',
-      link: function($scope, $element, $attr, navController) {
-
-      }
-    };
-  });*/
 }());

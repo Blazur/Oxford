@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('oxford.directives.toolbar.top', [   ])
+    .module('oxford.directives.toolbar.top', [])
     .directive('oxToolbarTop', oxToolbarTop);
     function oxToolbarTop() {
       return {
@@ -10,7 +10,7 @@
         replace: true,
         restrict: 'EA',
         scope: true,
-        template: '<div class="ox-toolbar ox-toolbar-top">' +
+        template: '<div class="ox-toolbar ox-toolbar-top {{color}}" ng-class="{\'ox-toolbar-has-title\': title }">' +
           '<ox-toolbar-header ng-if="title">'+
             '<ox-brand>{{title}}</ox-brand>'+
           '</ox-toolbar-header>'+
@@ -19,12 +19,11 @@
         '</div>',
         link: function($scope, $element, $attr, navController) {
           if( $attr.fixed === "true" ){
-            $lement.addClass('fixed-top')
+            $element.addClass('fixed-top')
           }
+          $scope.color = 'default';
+          if($attr.color){ $scope.color = $attr.color;}
           $scope.title = $attr.title;
-          if($attr.title){
-            $element.toggleClass('ox-toolbar-has-title')
-          }
         }
       };
     }

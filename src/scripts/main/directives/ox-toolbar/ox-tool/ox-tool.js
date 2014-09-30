@@ -6,7 +6,7 @@
     function oxTool() {
       return {
         transclude: true,
-        replace: true,
+        // replace: true,
         restrict: 'E',
         scope: {
           // color: '=color',
@@ -14,9 +14,9 @@
           // link: '=link',
           // title: '=title'
         },
-        template: '<a href="{{link}}" class="tool {{color}}">' +
-                  '<i ng-if="icon" class="fa fa-{{icon}}"></i>' +
-                  '<span ng-if="title">{{title}}</span>' +
+        template: '<a href="{{link}}" class="tool withripple {{color}}">' +
+                  '<i ng-if="icon" class="ox-icon fa fa-{{icon}}"></i>' +
+                  '<span class="title">{{title}}</span>' +
                   '</a>',
         link: function($scope, $element, $attr, navController) {
           $scope.icon = $attr.icon;

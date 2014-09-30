@@ -1,0 +1,55 @@
+.ox-toolbar
+
+  &.ox-toolbar-right
+    background paleBlue
+    position absolute
+    width 250px
+    height 100%
+    box-shadow 0 19px 38px rgba(0,0,0,0.30)
+
+    // width: 220px;
+    // height: 100%;
+    position absolute
+    top 0
+    right -200px
+    // padding 15px
+
+    // Snappy
+    // -webkit-transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+    // transition all 300ms cubic-bezier(.694, .0482, .335, 1)
+
+    .tool
+      // float right
+      position relative
+      margin-right 200px
+      width 40px
+
+      @media(min-width 768px)
+        width 60px
+        margin-right 190px
+
+    @media(min-width 768px)
+      // left -190px
+      width 250px
+      right -190px
+
+
+
+
+.show-toolbar-right
+
+  .ox-toolbar-right
+    width 250px
+    right -190px
+
+    .tool
+      // background-color none
+      width 100%
+      padding-left 20px
+      text-align left
+      margin 0
+      .title
+        opacity 1
+        margin-right 10px
+        float right
+        display block

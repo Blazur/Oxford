@@ -5342,6 +5342,8 @@ a.bg-default,
   color: #9e9e9e;
 }
 .button {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -10723,6 +10725,8 @@ a.bg-default,
   color: #9e9e9e;
 }
 .button {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -10809,7 +10813,7 @@ body {
 }
 .testblock {
   width: 100%;
-  height: 500px;
+  height: 400px;
   background: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -16218,6 +16222,8 @@ a.bg-default,
   color: #9e9e9e;
 }
 .button {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -16251,7 +16257,6 @@ a.bg-default,
 }
 .ox-toolbar.ox-toolbar-top,
 .ox-toolbar.ox-toolbar-bottom {
-  background-color: #fff;
   height: 50px;
 }
 @media (min-width: 768px) {
@@ -16260,21 +16265,11 @@ a.bg-default,
     height: 60px;
   }
 }
-.ox-toolbar.light-red {
-  background-color: #f9bdbb;
-}
-.ox-toolbar.default {
-  background-color: #fff;
-}
-.ox-toolbar.dark {
-  background-color: #616161;
-}
-.ox-toolbar.light {
-  background-color: #e0e0e0;
-}
 a.tool,
 .tool {
   margin: 0;
+  overflow: hidden;
+  position: relative;
   height: 50px;
   min-width: 50px;
   font-size: 16px;
@@ -16299,6 +16294,8 @@ a.tool .ox-icon,
   }
 }
 .ox-toolbar.ox-toolbar-top.ox-toolbar-has-title {
+  postion: fixed;
+  top: 0;
   height: 100px;
 }
 @media (min-width: 768px) {
@@ -16310,7 +16307,6 @@ a.tool .ox-icon,
   color: #9e9e9e;
   width: 100%;
   height: 50px;
-  border-right: 1px solid #eee;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -16339,7 +16335,6 @@ a.tool .ox-icon,
 .ox-toolbar.ox-toolbar-top .tools {
   min-width: 10%;
   height: 50px;
-  background-color: #fff;
 }
 @media (min-width: 768px) {
   .ox-toolbar.ox-toolbar-top .tools {
@@ -16356,6 +16351,64 @@ a.tool .ox-icon,
   float: right;
 }
 .ox-toolbar.ox-toolbar-top .tools.tools-right .tool {
+  float: right;
+}
+.ox-toolbar.ox-toolbar-bottom {
+  z-index: 3000;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.ox-toolbar.ox-toolbar-bottom .ox-toolbar-header {
+  color: #9e9e9e;
+  width: 100%;
+  height: 50px;
+  display: none;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-bottom .ox-toolbar-header {
+    display: block;
+    width: 250px;
+    height: 60px;
+    float: left;
+  }
+}
+.ox-toolbar.ox-toolbar-bottom .ox-toolbar-header .ox-brand {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+.ox-toolbar.ox-toolbar-bottom .ox-tool-box {
+  width: 100%;
+  z-index: 1000;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-bottom .ox-tool-box {
+    float: left;
+    width: calc(100% - 250px);
+  }
+}
+.ox-toolbar.ox-toolbar-bottom .tools {
+  min-width: 10%;
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .ox-toolbar.ox-toolbar-bottom .tools {
+    height: 60px;
+  }
+}
+.ox-toolbar.ox-toolbar-bottom .tools.tools-left {
+  float: left;
+}
+.ox-toolbar.ox-toolbar-bottom .tools.tools-left .tool {
+  float: left;
+}
+.ox-toolbar.ox-toolbar-bottom .tools.tools-right {
+  float: right;
+}
+.ox-toolbar.ox-toolbar-bottom .tools.tools-right .tool {
   float: right;
 }
 .ox-toolbar.ox-toolbar-left {

@@ -17,6 +17,7 @@
         template: '<a href="{{link}}" class="tool withripple button-{{color}}">' +
                   '<i ng-if="icon" class="ox-icon fa fa-{{icon}}"></i>' +
                   '<span class="title">{{title}}</span>' +
+                  '<paper-ripple fit></paper-ripple>'+
                   '</a>',
         link: function($scope, $element, $attr, navController) {
           $scope.icon = $attr.icon;

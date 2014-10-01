@@ -8,6 +8,7 @@
     'oxford.directives.toolbar.tools',
     'oxford.directives.toolbar.tool',
     'oxford.directives.toolbar.top',
+    'oxford.directives.toolbar.bottom',
     'oxford.directives.toolbar.left',
     'oxford.directives.toolbar.left.toggle',
     'oxford.directives.toolbar.right',

@@ -1,30 +1,26 @@
 @import 'app/_colors'
+
+
 .ox-toolbar
+
+
+
   shadow(2)
 
   &.ox-toolbar-top,
   &.ox-toolbar-bottom
-    background-color color-white
+    // background-color color-white
     height 50px
 
     @media (min-width 768px)
       height 60px
 
-  &.light-red
-    background-color color-red-100
-
-  &.default
-    background-color color-white
-
-  &.dark
-    background-color color-grey-700
-  &.light
-    background-color color-grey-300
-
 
 a.tool,
 .tool
   margin 0
+  overflow hidden
+  position relative
   height 50px
   min-width 50px
   font-size 16px
@@ -45,7 +41,6 @@ a.tool,
     font-size 22px
     padding-top 17px
     padding-bottom 10px
-
 
 
 

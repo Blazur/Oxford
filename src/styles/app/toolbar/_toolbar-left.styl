@@ -1,27 +1,17 @@
 .ox-toolbar
 
-  &.ox-toolbar-right
-    // right 0
-    // width 60px
-
-  &.ox-toolbar-left
-    // animation ox-toggle-toolbar-left-back 300ms
-    // -webkit-animation ox-toggle-toolbar-left-back 300ms
-    // animation-fill-mode forwards
-    // -webkit-animation-fill-mode forwards
-    width 60px
-
 
   &.ox-toolbar-left
 
     position absolute
     height 100%
+    width 50px
     top 100px
     shadow(3)
 
     @media(min-width 768px)
       top 60px
-
+      width 60px
 
     .tool
 
@@ -29,27 +19,19 @@
       position relative
       overflow hidden
       /* Value Set in keyframes*/
-
       text-align center
-      // padding-left 0
-      // width 40px
-      animation toggleTools-back 400ms
-      -webkit-animation toggleTools-back 400ms
+      animation toggleTools-back-mobile 400ms
+      -webkit-animation toggleTools-back-mobile 400ms
       animation-fill-mode forwards
       -webkit-animation-fill-mode forwards
-      // animation toggleTools-mobile-back 300ms
-      // -webkit-animation toggleTools-mobile-back 300ms
-
-
-      // animation toggleTools-back 300ms
-      // -webkit-animation toggleTools-back 300ms
-      // animation-fill-mode forwards
-      // -webkit-animation-fill-mode forwards
 
       @media(min-width 768px)
+        animation toggleTools-back 400ms
+        -webkit-animation toggleTools-back 400ms
+        animation-fill-mode forwards
+        -webkit-animation-fill-mode forwards
         width 60px
-        // animation-fill-mode forwards
-        // -webkit-animation-fill-mode forwards
+
       .title
         opacity 0
         position absolute
@@ -63,13 +45,14 @@
 
     position absolute
     height 100%
-    width 60px
+    width 50px
     right 0
     top 100px
     shadow(3)
 
     @media(min-width 768px)
       top 60px
+      width 60px
 
 
     .tool
@@ -78,7 +61,6 @@
       position relative
       overflow hidden
       /* Value Set in keyframes*/
-
       text-align center
       // padding-left 0
       // width 40px
@@ -129,16 +111,18 @@
     // -webkit-animation ox-toggle-toolbar-left 300ms
     // animation-fill-mode forwards
     // -webkit-animation-fill-mode forwards
+    width 250px
 
-    @media(min-width 768px){
+    @media(min-width 768px)
       width 250px
 
-    }
+
 
     .tool
       text-align left
       // padding-left 20px
       // width 100%
+
       animation toggleTools 300ms
       -webkit-animation toggleTools 300ms
       animation-fill-mode forwards

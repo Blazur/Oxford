@@ -11,6 +11,6 @@ angular.module('demo', [
     .state('home', {
       url: '/home',
       templateUrl: 'content',
-      // controller: 'Controller'
+      controller: 'Controller'
     });
 })

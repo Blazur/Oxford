@@ -1,54 +1,42 @@
-
+@import 'app/_colors'
 .ox-toolbar
   shadow(2)
 
   &.ox-toolbar-top,
   &.ox-toolbar-bottom
-    background-color color-default
+    background-color color-white
     height 50px
 
     @media (min-width 768px)
       height 60px
 
   &.light-red
-    background-color color-lightRed
+    background-color color-red-100
 
   &.default
     background-color color-white
 
   &.dark
-    background-color color-gray-dark
+    background-color color-grey-700
   &.light
-      background-color color-gray-light
+    background-color color-grey-300
 
 
+a.tool,
 .tool
   margin 0
   height 50px
   min-width 50px
   font-size 16px
   padding-top 12px
-  // padding-bottom 10px
-  // border-right 1px solid #eee
   display block
   text-align center
-  background-color #ffffff
-  color color-gray-light
-  // transition all 500ms ease
-  // -webkit-transition all 500ms ease
 
 
   .ox-icon
     font-size 25px
     transition all 500ms ease
     -webkit-transition all 500ms ease
-
-
-  .title
-    // opacity 0
-    // display none
-    // transition all 400ms ease 400ms
-    // -webkit-transition all 400ms ease 400ms
 
 
   @media (min-width:768px)
@@ -58,53 +46,6 @@
     padding-top 17px
     padding-bottom 10px
 
-  &:hover,
-  &:focus,
-  &.active
-    background-color inherit
-    color white
-    // border-right 1px inset border-lightRed
-  &.light-red
-    background-color color-lightRed
-    color color-white
-
-  &.teal
-    background-color color-teal
-    color color-white
-
-  &.blue
-    background-color color-blue
-    color color-white
-
-  &.green
-    background-color color-green
-    color color-white
-
-  &.yellow
-    background-color color-yellow
-    color color-white
-
-  &.orange
-    background-color color-orange
-    color color-white
-
-  &.red
-    background-color color-red
-    color color-white
-
-  &.default
-    background-color color-white
-    color color-gray
 
 
 
-
-// .has-ox-toolbar-left .ox-toolbar .tool .title,
-// .has-ox-toolbar-right .ox-toolbar .tool .title
-//   transition all 10ms ease
-//   -webkit-transition all 10ms ease
-
-// .show-toolbar-left .ox-toolbar .tool .title,
-// .show-toolbar-right .ox-toolbar .tool .title
-//   transition all 1000ms ease
-//   -webkit-transition all 1000ms ease

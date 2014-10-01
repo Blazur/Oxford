@@ -7,14 +7,14 @@
       return {
         transclude: true,
         replace: true,
+        scope: true,
         restrict: 'E',
-        template: '<div class="ox-toolbar ox-toolbar-left {{color}}">' +
+        template: '<div class="ox-toolbar ox-toolbar-left bg-{{color}}">' +
           '<div ng-transclude></div>' +
         '</div>',
         link: function($scope, $element, $attr, navController) {
-          angular.element('body').addClass('has-ox-toolbar-left')
-          $scope.color = 'default'
-          if($attr.color){ $scope.color = $attr.color; }
+          $scope.color = $attr.color;
+          document.querySelector('body').classList.add('has-ox-toolbar-left')
         }
       };
     }

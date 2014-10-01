@@ -11,8 +11,8 @@
           $element.on('click', toggleNav);
 
           function toggleNav(){
-            angular.element('body').toggleClass('show-toolbar-left')
-            angular.element('body').toggleClass('has-ox-toolbar-left')
+            document.querySelector('body').classList.toggle('show-toolbar-left')
+            document.querySelector('body').classList.toggle('has-ox-toolbar-left')
           }
 
         }

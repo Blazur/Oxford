@@ -5,7 +5,7 @@ body {
   overflow hidden
   width 100%
   height 100%
-  background-color color-gray-lighter
+  background-color color-grey-300
 }
 .dashboard
   width: 100%;
@@ -20,17 +20,13 @@ body {
   position absolute
   right 0
 
-
   // Properties set in keyframes
   -webkit-transform: translateX(0);
   transform: translateX(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   // -webkit-transform: translate3d(0, 0, 0);
   // transform: translate3d(0, 0, 0);
-
-  // -webkit-backface-visibility: hidden;
-  // backface-visibility: hidden;
-  // -webkit-transition all 300ms ease-out
-  // transition all 300ms ease-out
 
 .dashboard-view
 
@@ -40,12 +36,8 @@ body {
   height 100%
   padding 20px
   margin 0
-  // left 0
-  // -webkit-transition all 400ms ease
-  // transition all 400ms ease
 
   @media(min-width 768px)
-    // left 0
     width 100%
 
 
@@ -55,7 +47,6 @@ body {
 
 .ox-item
   height 50px
-
 
 .testblock
   // -webkit-transition all 1s ease

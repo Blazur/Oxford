@@ -6,19 +6,13 @@
   <title>Oxford Demo</title>
   <!-- build:css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="../lib/c3/c3.css" />
-    <link rel="stylesheet" href="../lib/toastr/toastr.css" />
-    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
   <!-- endbuild -->
 
   <!-- <link rel="stylesheet" href="bootstrap-material-design/material-wfont.css"> -->
   <!-- <link rel="stylesheet" href="bootstrap-material-design/material.css"> -->
-  <link rel="stylesheet" href="bootstrap-material-design/ripples.css">
 
   <!-- styles:css -->
-  <link rel="stylesheet" href="/oxford.css">
-  <link rel="stylesheet" href="/main.css">
   <!-- endinject -->
 
 
@@ -33,24 +27,24 @@
 
   <ox-dashboard>
   <!-- Top ToolBar -->
-    <ox-toolbar-top title="Oxford" color="default">
+    <ox-toolbar-top title="Oxford" color="grey-400">
       <ox-tools side="left">
-        <ox-tool color="default" icon="bars" ox-toggle-toolbar-left></ox-tool>
-        <ox-tool color="blue" icon="pencil" link="#/home"></ox-tool>
+        <ox-tool color="lightblue-200" icon="bars" ox-toggle-toolbar-left></ox-tool>
+        <ox-tool color="lightblue-300" icon="pencil" link="#/home"></ox-tool>
       </ox-tools>
       <ox-tools side="right">
-        <ox-tool color="green" icon="github" link="#/home"></ox-tool>
-        <ox-tool color="yellow" icon="edit" link="#/home"></ox-tool>
-        <ox-tool color="orange" icon="clipboard" link="#/home"></ox-tool>
-        <ox-tool color="red" icon="bar-chart-o" link="#/home"></ox-tool>
+        <ox-tool color="lightblue-700" icon="edit" link="#/home"></ox-tool>
+        <ox-tool color="lightblue-600" icon="clipboard" link="#/home"></ox-tool>
+        <ox-tool color="lightblue-500" icon="bar-chart-o" link="#/home"></ox-tool>
+        <ox-tool color="lightblue-400" icon="github" link="#/home"></ox-tool>
       </ox-tools>
     </ox-toolbar-top>
     <!-- Side NavBar -->
-    <ox-toolbar-left color="dark">
+    <ox-toolbar-left color="purple-800">
       <ox-tools>
-        <ox-tool color="yellow" icon="edit" link="#/home" title="Home"></ox-tool>
-        <ox-tool color="orange" icon="user" link="#/home" title="Users"></ox-tool>
-        <ox-tool color="red" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
+        <ox-tool color="deeporange-400" icon="home" link="#/home" title="Home"></ox-tool>
+        <ox-tool color="deeporange-300" icon="user" link="#/home" title="Users"></ox-tool>
+        <ox-tool color="deeporange-200" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
       </ox-tools>
     </ox-toolbar-left>
 
@@ -60,12 +54,13 @@
 
     <ox-toolbar-right color="default">
       <ox-tools>
-        <ox-tool color="yellow" icon="edit" link="#/home" title="Home"></ox-tool>
-        <ox-tool color="orange" icon="user" link="#/home" title="Users"></ox-tool>
-        <ox-tool color="red" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
-        <ox-tool color="default" icon="bars" ox-toggle-toolbar-right></ox-tool>
+        <ox-tool color="lightgreen-400" icon="edit" link="#/home" title="Home"></ox-tool>
+        <ox-tool color="lightgreen-500" icon="user" link="#/home" title="Users"></ox-tool>
+        <ox-tool color="lightgreen-600" icon="bar-chart-o" link="#/home" title="Graphs"></ox-tool>
+        <ox-tool color="grey-800" icon="bars" ox-toggle-toolbar-right></ox-tool>
       </ox-tools>
     </ox-toolbar-right>
+
   </ox-dashboard>
 
   <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script> -->
@@ -85,33 +80,9 @@
   <script src="/lib/gsap/src/minified/utils/Draggable.min.js"></script>
 
   <!-- scripts:js -->
-  <script src="/scripts/main.js"></script>
-  <script src="/scripts/main/directives/card.js"></script>
-  <script src="/scripts/main/directives/chart.js"></script>
-  <script src="/scripts/main/directives/dashboard.js"></script>
-  <script src="/scripts/main/directives/drag.js"></script>
-  <script src="/scripts/main/directives/index.js"></script>
-  <script src="/scripts/main/directives/list.js"></script>
-  <script src="/scripts/main/directives/ripple.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-toolbar.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/left/ox-toolbar-left.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-brand/ox-brand.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-toggle-toolbar-left/ox-toggle-toolbar-left.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-toggle-toolbar-right/ox-toggle-toolbar-right.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-tool/ox-tool.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-tool-box/ox-tool-box.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-toolbar-header/ox-toolbar-header.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/ox-tools/ox-tools.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/right/ox-toolbar-right.js"></script>
-  <script src="/scripts/main/directives/ox-toolbar/top/ox-toolbar-top.js"></script>
   <!-- endinject -->
 
   <!-- demo:js -->
-  <script src="app.js"></script>
-  <script src="bootstrap-material-design/material.js"></script>
-  <script src="bootstrap-material-design/ripples.js"></script>
-  <script src="controllers/app.controller.js"></script>
-  <script src="services/logger.service.js"></script>
   <!-- endinject -->
 
   <!-- <script type="text/javascript" src="bootstrap-material-design/ripples.js"></script> -->
@@ -120,14 +91,14 @@
       <!-- <a href="javascript:void(0)" class="btn btn-primary">Default</a> -->
   <script type="text/ng-template" id="content">
     <div class="testblock">
-    </div>
-  </script>
-      <!-- <ox-chart options="options" pattern="material"></ox-chart>
+      <ox-chart options="options" pattern="material"></ox-chart>
       <div class="g-wide-\-full g-wide-\-last row">
         <div class="card-material" draggable>Yoooo</div>
         <div class="card-material" draggable>Yoooo</div>
         <div class="card-material" draggable>Yoooo</div>
-      </div> -->
+      </div>
+    </div>
+  </script>
   <!-- <script type="text/ng-template" id="content">
       <div id="original"></div>
   </script> -->

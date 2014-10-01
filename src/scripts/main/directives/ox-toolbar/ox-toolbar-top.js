@@ -10,7 +10,7 @@
         replace: true,
         restrict: 'EA',
         scope: true,
-        template: '<div class="ox-toolbar ox-toolbar-top {{color}}" ng-class="{\'ox-toolbar-has-title\': title }">' +
+        template: '<div class="ox-toolbar ox-toolbar-top bg-{{color}}" ng-class="{\'ox-toolbar-has-title\': title }">' +
           '<ox-toolbar-header ng-if="title">'+
             '<ox-brand>{{title}}</ox-brand>'+
           '</ox-toolbar-header>'+
@@ -21,8 +21,8 @@
           if( $attr.fixed === "true" ){
             $element.addClass('fixed-top')
           }
-          $scope.color = 'default';
-          if($attr.color){ $scope.color = $attr.color;}
+          $scope.color = $attr.color || 'default';
+
           $scope.title = $attr.title;
         }
       };

@@ -1,0 +1,291 @@
+.ox-toolbar
+  &.ox-toolbar-left
+
+    position absolute
+    height 100%
+    width 50px
+    top 100px
+    shadow(3)
+
+
+    @media(min-width 768px)
+      top 60px
+      width 60px
+
+    .tool
+
+      display block
+      position relative
+      overflow hidden
+      /* Value Set in keyframes*/
+      text-align center
+      animation toggleTools-back-mobile 400ms
+      -webkit-animation toggleTools-back-mobile 400ms
+      animation-fill-mode forwards
+      -webkit-animation-fill-mode forwards
+
+      @media(min-width 768px)
+        animation toggleTools-back 400ms
+        -webkit-animation toggleTools-back 400ms
+        animation-fill-mode forwards
+        -webkit-animation-fill-mode forwards
+        width 60px
+
+      .title
+        opacity 0
+        position absolute
+        display block
+        right 20%
+        top 30%
+        min-width 40px
+        text-align right
+
+  &.ox-toolbar-right
+
+    position absolute
+    height 100%
+    width 50px
+    right 0
+    top 100px
+    shadow(3)
+
+    @media(min-width 768px)
+      top 60px
+      width 60px
+
+
+    .tool
+
+      display block
+      position relative
+      overflow hidden
+      /* Value Set in keyframes*/
+      text-align center
+      // padding-left 0
+      // width 40px
+
+      @media(min-width 768px)
+        width 60px
+        // animation-fill-mode forwards
+        // -webkit-animation-fill-mode forwards
+      .title
+        opacity 0
+        position absolute
+        display block
+        left 20%
+        top 30%
+        min-width 40px
+        text-align left
+
+.has-ox-toolbar-left
+
+  .dashboard-view
+    width calc(100% - 50px)
+    left 50px
+
+
+    @media(min-width 768px)
+      width calc(100% - 60px)
+      left 60px
+
+.has-ox-toolbar-right.has-ox-toolbar-left
+
+  .dashboard-view
+    width calc(100% - 100px)
+    left 50px
+    right 50px
+
+    @media(min-width 768px)
+      width calc(100% - 120px)
+      left 60px
+      right 60px
+
+
+
+
+.show-toolbar-left // Show Tool Bar =======
+
+  .ox-toolbar-left
+    // animation ox-toggle-toolbar-left 300ms
+    // -webkit-animation ox-toggle-toolbar-left 300ms
+    // animation-fill-mode forwards
+    // -webkit-animation-fill-mode forwards
+    width 250px
+
+    @media(min-width 768px)
+      width 250px
+
+
+
+    .tool
+      text-align left
+      // padding-left 20px
+      // width 100%
+
+      animation toggleTools 300ms
+      -webkit-animation toggleTools 300ms
+      animation-fill-mode forwards
+      -webkit-animation-fill-mode forwards
+
+      .ox-icon
+        font-size 18px
+      .title
+        // opacity 1
+        animation ox-tool-title-show 300ms
+        -webkit-animation ox-tool-title-show 300ms
+        animation-fill-mode forwards
+        -webkit-animation-fill-mode forwards
+
+  .dashboard-content
+    width calc(100% - 250px)
+
+  &.has-ox-toolbar-right
+
+    .dashboard-content
+
+      width calc(100% - 310px)
+      left 250px
+
+
+.show-toolbar-right
+
+  .ox-toolbar-right
+    width 250px
+
+    .tool
+      width 100%
+      text-align right
+      // width 100%
+      animation toggleTools-right 300ms
+      -webkit-animation toggleTools-right 300ms
+      animation-fill-mode forwards
+      -webkit-animation-fill-mode forwards
+
+      .ox-icon
+        font-size 18px
+      .title
+        // opacity 1
+        animation ox-tool-title-show 300ms
+        -webkit-animation ox-tool-title-show 300ms
+        animation-fill-mode forwards
+        -webkit-animation-fill-mode forwards
+
+
+.show-toolbar-right
+
+  .ox-toolbar-right
+    width 250px
+
+  .dashboard-content
+    width calc(100% - 250px)
+
+
+  &.has-ox-toolbar-left
+
+    .dashboard-content
+
+      width calc(100% - 250px)
+      right 250px
+
+
+
+.show-toolbar-right.show-toolbar-left
+
+  .dashboard-content
+
+    width calc(100% - 500px)
+    left 250px
+
+
+@keyframes ox-tool-title-show
+  0%
+    opacity 0
+
+  80%
+    opacity 2
+
+  100%
+    opacity 1
+
+
+
+@keyframes ox-toggle-toolbar-left
+  0%
+    animate-toggle-toolbar-left(0)
+  100%
+    animate-toggle-toolbar-left(100)
+@keyframes ox-toggle-toolbar-left-back
+
+  0%
+    animate-toggle-toolbar-left(100)
+  100%
+    animate-toggle-toolbar-left(0)
+
+@keyframes toggleTools-mobile
+  0%
+    animate-toggleTools(0, true)
+
+  100%
+    animate-toggleTools(100, true)
+
+@keyframes toggleTools-back-mobile
+  0%
+    animate-toggleTools(100, true)
+
+  100%
+    animate-toggleTools(0, true)
+
+@keyframes toggleTools
+  0%
+    animate-toggleTools(0, false)
+
+  100%
+    animate-toggleTools(100, false)
+
+
+@keyframes toggleTools-back
+  0%
+    animate-toggleTools(100, false)
+
+  100%
+    animate-toggleTools(0, false)
+
+@keyframes toggleTools-right
+  0%
+    animate-toggleTools(0, false, true)
+
+  100%
+    animate-toggleTools(100, false, true)
+@keyframes toggleTools-right-back
+  0%
+    animate-toggleTools(100, false, true)
+
+  100%
+    animate-toggleTools(0, false, true)
+
+@keyframes ox-toggle-content-left
+  0%
+    animate-toggle-content-left(0)
+  100%
+    animate-toggle-content-left(100)
+
+@keyframes ox-toggle-content-left-back
+  0%
+    animate-toggle-content-left(100)
+  100%
+    animate-toggle-content-left(0)
+
+
+@keyframes ox-toggle-view-left
+  0%
+    animate-toggle-view-left(0)
+  100%
+    animate-toggle-view-left(100)
+
+
+@keyframes ox-toggle-view-left-back
+  0%
+    animate-toggle-view-left(100)
+  100%
+    animate-toggle-view-left(0)
+

@@ -1,0 +1,112 @@
+.ox-toolbar
+
+  &.ox-toolbar-top
+
+    &.ox-toolbar-has-title
+      postion fixed
+      top 0
+      height 100px
+      @media (min-width 768px)
+        height 60px
+    .ox-toolbar-header
+      color color-grey-500
+
+      // > div.ox-brand > div > span
+      width 100%
+      height 50px
+      text-align center
+
+      @media (min-width: 768px)
+        width 250px
+        height 60px
+        float left
+
+      .ox-brand
+        width 100%
+        font-size 30px
+        font-weight bold
+        padding-top 15px
+
+    .ox-tool-box
+      width 100%
+      z-index 1000
+
+      @media (min-width 768px)
+        float left
+        width calc(100% - 250px)
+
+    .tools
+      // Mobile Height
+      min-width 10%
+      height 50px
+
+
+      @media (min-width: 768px)
+        height 60px
+
+      &.tools-left
+        float left
+        .tool
+          float left
+      &.tools-right
+        float right
+        .tool
+          float right
+
+  &.ox-toolbar-bottom
+    z-index 3000
+    position fixed
+    bottom 0
+    width 100%
+
+    &.ox-toolbar-has-title
+      // height 100px
+      // @media (min-width 768px)
+      //   height 60px
+
+    .ox-toolbar-header
+      color color-grey-500
+
+      // > div.ox-brand > div > span
+      width 100%
+      height 50px
+      display none
+      text-align center
+
+      @media (min-width: 768px)
+        display block
+        width 250px
+        height 60px
+        float left
+
+      .ox-brand
+        width 100%
+        font-size 30px
+        font-weight bold
+        padding-top 15px
+
+    .ox-tool-box
+      width 100%
+      z-index 1000
+
+      @media (min-width 768px)
+        float left
+        width calc(100% - 250px)
+
+    .tools
+      // Mobile Height
+      min-width 10%
+      height 50px
+
+
+      @media (min-width: 768px)
+        height 60px
+
+      &.tools-left
+        float left
+        .tool
+          float left
+      &.tools-right
+        float right
+        .tool
+          float right

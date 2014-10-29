@@ -1,30 +1,58 @@
 @import 'app/_colors'
 @import 'app/_shadows'
-
-.dashboard
+body {
+  position relative
+  overflow hidden
   width 100%
   height 100%
+  background-color color-grey-300
+}
+.dashboard
+  width: 100%;
+  height: 100%;
+  position: relative;
 
-
-.dashboard-nav
-  background paleBlue
-  position absolute
-  width 20%
-  height 100%
-  box-shadow 0 19px 38px rgba(0,0,0,0.30)
+  // padding: 1% 0; /* Temp: Just spacing. */
 
 .dashboard-content
-  margin-left 20%
-  height: 100%
-  overflow: hidden
+  width 100%
+  height 100%
+  position absolute
+  right 0
 
-.ox-toolbar
-  background-color lightRed
-  shadow(2)
-  height 60px
+  // Properties set in keyframes
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  // -webkit-transform: translate3d(0, 0, 0);
+  // transform: translate3d(0, 0, 0);
+
+.dashboard-view
+
+  overflow scroll
+  position absolute
+  width 100%
+  height 100%
+  padding 20px
+  margin 0
+
+  @media(min-width 768px)
+    width 100%
+
+
 
 .ox-list
   list-style none
 
 .ox-item
   height 50px
+
+.testblock
+  // -webkit-transition all 1s ease
+  // transition all 1s ease
+  width 100%
+  height 400px
+  background color-white
+  shadow(2)
+

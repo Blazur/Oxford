@@ -18,9 +18,9 @@ module.exports = function(config) {
         'src/lib/angular/angular.js',
         'src/lib/d3/d3.js',
         'src/lib/c3/c3.js',
-        'src/scripts/**/*.js',
         'src/lib/angular-mocks/angular-mocks.js',
         'node_modules/expect.js/index.js',
+        'src/scripts/**/*.js',
         'test/**/*.js'
     ],
 
@@ -67,6 +67,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
   });
 };
